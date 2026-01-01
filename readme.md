@@ -96,4 +96,5 @@ curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
 5. Install `cmake` (pacman)
 6 Install `go` (pacman)
 7. Install `Kotlin` and `gradle` (pacman)
-8. Instapp `nodejs` and `npm` (pacman)
+8. Install `nodejs` and `npm` (pacman)
+9. Install `texlive-bin` and then `texlive-latexextra` (pacman)
