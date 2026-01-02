@@ -1,5 +1,7 @@
 # CachyOS Setup
 
+![screenshot](./screenshot.png)
+
 ## Core things:
 
 1. Get a good terminal editor:
@@ -75,6 +77,16 @@ Then right click the pager and set it to show windows and icons.
 or import the included `shortcuts.kksrc` file.
 
 3. Set wallpaper (from `proton drive`), lock screen background, accent colours, and SDMM login screen background.
+
+## Fastfetch config:
+
+From this repo in the `fastfetch/` folder copy the config and the logo to `~/.config/fastfetch/`. Might need to create the folder using `fastfetch --gen-config` or just `mkdir`.
+
+```bash
+git clone https://github.com/krisfur/cachyos-setup.git
+fastfetch --gen-config
+cp cachyos-setup/fastfetch/* ~/.config/fastfetch/
+```
 
 ## Dev stuff
 
