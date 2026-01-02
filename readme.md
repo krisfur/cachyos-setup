@@ -122,3 +122,9 @@ nmcli connection up "{SSID}"
 ```
 
 this happens after installing a system-wide vpn instead of just a browser extension.
+
+2. Turn off `fish` auto-capitalisation which drives me mad:
+
+```bash
+set -g fish_case_insensitive 0
+```
