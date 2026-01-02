@@ -105,3 +105,20 @@ git clone https://github.com/LazyVim/starter ~/.config/nvim
 rm -rf ~/.config/nvim/.git
 nvim
 ```
+
+## Troubleshooting issues
+
+1. `DNS` fails to work with Steam Cloud saves (use the desired SSID):
+
+```bash
+# 1. Force your Wi-Fi to use Google (8.8.8.8) and Cloudflare (1.1.1.1)
+nmcli connection modify "{SSID}" ipv4.dns "8.8.8.8 1.1.1.1"
+
+# 2. Tell it to IGNORE whatever DNS your router is trying to assign
+nmcli connection modify "{SSID}" ipv4.ignore-auto-dns yes
+
+# 3. Apply the changes by reloading the connection
+nmcli connection up "{SSID}"
+```
+
+this happens after installing a system-wide vpn instead of just a browser extension.
