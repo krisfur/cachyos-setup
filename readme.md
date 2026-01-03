@@ -98,7 +98,7 @@ curl -f https://zed.dev/install.sh | sh
 
 and add the `Zedokai` extension and set it to `Zedokai Darker (filter Ristretto)`. All other needed extensions will pop up when you open a file of a certain language.
 
-Afterwards get the `anthropic API` key from `proton pass` and use this in zed `settings.json`:
+Afterwards get the `anthropic API` key from `proton pass` and configure that agent, and then use this in zed `settings.json`:
 
 ```json
 {
