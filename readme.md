@@ -98,6 +98,45 @@ curl -f https://zed.dev/install.sh | sh
 
 and add the `Zedokai` extension and set it to `Zedokai Darker (filter Ristretto)`. All other needed extensions will pop up when you open a file of a certain language.
 
+Afterwards get the `anthropic API` key from `proton pass` and use this in zed `settings.json`:
+
+```json
+{
+  "agent": {
+    "default_profile": "write",
+    "default_model": {
+      "provider": "anthropic",
+      "model": "claude-haiku-4-5-latest"
+    },
+    "model_parameters": []
+  },
+  "show_edit_predictions": false,
+  "ui_font_size": 16,
+  "buffer_font_size": 15,
+  "theme": {
+    "mode": "system",
+    "light": "One Light",
+    "dark": "Zedokai Darker (Filter Ristretto)"
+  },
+  "lsp": {
+    "vscode-css-language-server": {
+      "settings": {
+        "css": {
+          "lint": {
+            "unknownAtRules": "ignore"
+          }
+        },
+        "scss": {
+          "lint": {
+            "unknownAtRules": "ignore"
+          }
+        }
+      }
+    }
+  }
+}
+```
+
 2. Install `uv` (pacman)
 3. Install `Rust`:
 
@@ -108,7 +147,7 @@ curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
 5. Install `cmake` (pacman)
 6. Install `go` (pacman)
 7. Install `Kotlin` and `gradle` (pacman)
-8. Install `nodejs` and `npm` (pacman)
+8. Install `nodejs` and `npm` (pacman), or be a man and install `bun` (pacman)
 9. Install `texlive-bin` and then `texlive-latexextra` (pacman)
 10. Install `neovim` (pacman) and then `lazyvim`:
 
