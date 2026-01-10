@@ -26,7 +26,7 @@ makepkg -si
 yay -S zen-browser-bin
 ```
 
-And log in to `mozilla account` for sync, `proton pass` for passwords and passkeys, and `github`. Can grab wallpapers from `proton drive` now as well.
+And log in to `mozilla account` for sync, `proton pass` for passwords and passkeys, and `github`. Can grab wallpapers from `proton drive` now as well or use some from this repo.
 
 3. Get `arch-browse` to make installing stuff easy.
 
