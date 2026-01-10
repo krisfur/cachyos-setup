@@ -15,8 +15,9 @@
   "display": {
     "separator": " ",
     "color": {
-      "keys": "white",
-      "title": "38;2;247;164;29",
+      "keys": "38;2;247;164;29",
+      "title": "38;2;183;65;14",
+      "output": "38;2;255;255;255",
     },
     "size": {
       "binaryPrefix": "si",
@@ -30,50 +31,41 @@
     // ============================================
     {
       "type": "custom",
-      "format": "┌──  Hardware ────────────────────────────────────┐",
-      "outputColor": "38;2;183;65;14",
+      "format": "{#title}┌── {#keys} Hardware {#title}────────────────────────────────────┐",
     },
     {
       "type": "host",
       "key": "│ ",
-      "keyColor": "38;2;247;164;29",
     },
     {
       "type": "cpu",
       "key": "│ ├─ ",
       "format": "{1}",
-      "keyColor": "38;2;247;164;29",
     },
     {
       "type": "gpu",
       "key": "│ ├─ ",
-      "keyColor": "38;2;247;164;29",
     },
     {
       "type": "display",
       "key": "│ ├─ 󰍹",
-      "keyColor": "38;2;247;164;29",
     },
     {
       "type": "memory",
       "key": "│ ├─ ",
-      "keyColor": "38;2;247;164;29",
     },
     {
       "type": "disk",
       "key": "│ ├─ ",
       "folders": "/",
-      "keyColor": "38;2;247;164;29",
     },
     {
       "type": "battery",
       "key": "│ └─ ",
-      "keyColor": "38;2;247;164;29",
     },
     {
       "type": "custom",
-      "format": "└──────────────────────────────────────────────────┘",
-      "outputColor": "38;2;183;65;14",
+      "format": "{#title}└──────────────────────────────────────────────────┘",
     },
 
     // ============================================
@@ -81,43 +73,35 @@
     // ============================================
     {
       "type": "custom",
-      "format": "┌──  Software ──────────────┐",
-      "outputColor": "38;2;183;65;14", // Rust Orange Border
+      "format": "{#title}┌── {#keys} Software {#title}──────────────┐",
     },
     {
       "type": "os",
       "key": "│ ",
-      "keyColor": "38;2;247;164;29", // Rust Orange Tree/Icon
     },
     {
       "type": "kernel",
       "key": "│ ├─ ",
-      "keyColor": "38;2;247;164;29",
     },
     {
       "type": "uptime",
       "key": "│ ├─ ",
-      "keyColor": "38;2;247;164;29",
     },
     {
       "type": "packages",
       "key": "│ ├─ ",
-      "keyColor": "38;2;247;164;29",
     },
     {
       "type": "shell",
       "key": "│ ├─ ",
-      "keyColor": "38;2;247;164;29",
     },
     {
       "type": "terminal",
       "key": "│ └─ ",
-      "keyColor": "38;2;247;164;29",
     },
     {
       "type": "custom",
-      "format": "└────────────────────────────┘",
-      "outputColor": "38;2;183;65;14",
+      "format": "{#title}└────────────────────────────┘",
     },
 
     // ============================================
@@ -125,38 +109,32 @@
     // ============================================
     {
       "type": "custom",
-      "format": "┌──  Desktop ──────────────┐",
-      "outputColor": "38;2;183;65;14",
+      "format": "{#title}┌── {#keys} Desktop {#title}──────────────┐",
     },
     {
       "type": "de",
       "key": "│ ",
-      "keyColor": "38;2;247;164;29",
     },
     {
       "type": "wm",
       "key": "│ ├─ ",
-      "keyColor": "38;2;247;164;29",
     },
     {
       "type": "wmtheme",
       "key": "│ ├─ ",
-      "keyColor": "38;2;247;164;29",
     },
     {
       "type": "theme",
       "key": "│ └─ ",
-      "keyColor": "38;2;247;164;29",
       "format": "{1}",
     },
     {
       "type": "custom",
-      "format": "└───────────────────────────┘",
-      "outputColor": "38;2;183;65;14",
+      "format": "{#title}└───────────────────────────┘",
     },
     {
       "type": "colors",
-      "symbol": "square", // Options: "circle", "block", "square", "diamond"
+      "symbol": "square",
       "paddingLeft": 2,
     },
   ],
