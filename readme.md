@@ -4,7 +4,7 @@
 
 ## Core things:
 
-1. Get a good terminal editor:
+1. Get a good terminal emulator:
 
 ```bash
 pacman -S ghostty
@@ -98,7 +98,7 @@ You can also change the bottom left icon to the orange logo: click the current l
 curl -f https://zed.dev/install.sh | sh
 ```
 
-and add the `Zedokai` extension and set it to `Zedokai Darker (filter Ristretto)`. All other needed extensions will pop up when you open a file of a certain language.
+and add the `Zedokai` extension and set it to `Zedokai Darker (filter Ristretto)`. All other needed extensions will pop up when you open a file of a certain language, other than odin.
 
 Afterwards get the `anthropic API` key from `proton pass` and configure that agent, and then use this in zed `settings.json`:
 
@@ -145,13 +145,24 @@ Afterwards get the `anthropic API` key from `proton pass` and configure that age
 ```bash
 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
 ```
+
 4. Install `zig` (pacman)
 5. Install `cmake` (pacman)
 6. Install `go` (pacman)
-7. Install `Kotlin` and `gradle` (pacman)
-8. Install `nodejs` and `npm` (pacman), or be a man and install `bun` (pacman)
+7. Install `odin`:
+
+```bash
+paru -S odin-git
+```
+
+8. Install `bun`:
+
+```bash
+curl -fsSL https://bun.sh/install | bash
+```
+
 9. Install `texlive-bin` and then `texlive-latexextra` (pacman)
-10. Install `neovim` (pacman) and then `lazyvim`:
+10. Install `neovim` (pacman) and then `lazyvim` (or keep stock):
 
 ```bash
 git clone https://github.com/LazyVim/starter ~/.config/nvim
