@@ -12,37 +12,34 @@ pacman -S ghostty
 
 Then make it default in the settings.
 
-2. Install yay:
+2. Install a good browser:
 
 ```bash
-git clone https://aur.archlinux.org/yay.git
-cd yay
-makepkg -si
+paru -S zen-browser-bin
 ```
 
-3. Install a good browser:
+And log in to `mozilla account` for bookmarks, `proton pass` for passwords and passkeys, and `github`.
+
+For lighter experience with no bookmark sync go:
 
 ```bash
-yay -S zen-browser-bin
+paru -S helium-browser-bin
 ```
 
-And log in to `mozilla account` for sync, `proton pass` for passwords and passkeys, and `github`. Can grab wallpapers from `proton drive` now as well.
+3. Get `huginn` to make installing stuff easy.
 
-3. Get `arch-browse` to make installing stuff easy.
-
-The repo lives [here](https://github.com/krisfur/arch-browse.git).
+The repo lives [here](https://github.com/krisfur/huginn.git).
 
 ```bash
-git clone https://github.com/krisfur/arch-browse.git
-cd arch-browse
-chmod +x arch-browse.sh
-sudo mv arch-browse /usr/local/bin/arch-browse
-cd ..
-rm -rf arch-browse/
+paru -S odin-git
+git clone https://github.com/krisfur/huginn.git
+cd huginn
+odin build .
+sudo cp huginn /usr/local/bin/huginn
 ```
 
-5. Set up github:
-Get `github-cli` using pacman or arch-browse, then run:
+4. Set up github:
+Get `github-cli` using `pacman` or `huginn`, then run:
 
 ```bash
 gh auth login
@@ -76,7 +73,9 @@ Then right click the pager and set it to show windows and icons.
 
 or import the included `shortcuts.kksrc` file.
 
-3. Set wallpaper (from `proton drive`), lock screen background, accent colours, and SDMM login screen background.
+NOTE: change desktop with meta+number doesn't always set by default from import
+
+3. Set `wallpaper` (from `proton drive` or this repo), `lock screen` background, `accent colours` (`#aaffff`), and `SDDM login screen` background.
 
 ## Fastfetch config:
 
@@ -99,7 +98,7 @@ You can also change the bottom left icon to the orange logo: click the current l
 curl -f https://zed.dev/install.sh | sh
 ```
 
-and add the `Zedokai` extension and set it to `Zedokai Darker (filter Ristretto)`. All other needed extensions will pop up when you open a file of a certain language, other than odin.
+and add the `Zedokai` extension and set it to `Zedokai Darker (Filter Spectrum)`. All other needed extensions will pop up when you open a file of a certain language, other than `odin`.
 
 Afterwards get the `anthropic API` key from `proton pass` and configure that agent, and then use this in zed `settings.json`:
 
@@ -163,13 +162,7 @@ curl -fsSL https://bun.sh/install | bash
 ```
 
 9. Install `texlive-bin` and then `texlive-latexextra` (pacman)
-10. Install `neovim` (pacman) and then `lazyvim` (or keep stock):
-
-```bash
-git clone https://github.com/LazyVim/starter ~/.config/nvim
-rm -rf ~/.config/nvim/.git
-nvim
-```
+10. Install `neovim` (pacman) and `fresh-editor-bin` (AUR)
 
 ## Troubleshooting issues
 
