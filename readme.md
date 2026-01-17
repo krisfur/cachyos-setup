@@ -86,6 +86,7 @@ From this repo in the `fastfetch/` folder copy the config and the logo to `~/.co
 git clone https://github.com/krisfur/cachyos-setup.git
 fastfetch --gen-config
 cp cachyos-setup/fastfetch/* ~/.config/fastfetch/
+fastfetch --logo-recache
 ```
 
 You can also change the bottom left icon to the orange logo: click the current logo, click settings in top right of the menu, then change logo.
