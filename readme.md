@@ -24,8 +24,25 @@ And log in to `proton pass` for passwords and passkeys, and `github`.
 
 The repo lives [here](https://github.com/krisfur/huginn.git).
 
+On x86_64 just grab the tarball:
+
+```bash
+curl -L -O https://github.com/krisfur/huginn/releases/download/v1.0.2/huginn-v1.0.2-linux_x86_64.tar.gz
+tar -xzf huginn-v1.0.2-linux_x86_64.tar.gz
+sudo cp huginn-v1.0.2-linux_x86_64/huginn /usr/local/bin/huginn
+```
+
+Otherwise build from source:
+
+- get the odin compiler
+
 ```bash
 paru -S odin-git
+```
+
+- clone and build
+
+```bash
 git clone https://github.com/krisfur/huginn.git
 cd huginn
 odin build .
