@@ -180,3 +180,54 @@ this happens after installing a system-wide vpn instead of just a browser extens
 ```bash
 set -g fish_case_insensitive 0
 ```
+
+3. Fingerprint reader on older thinkpads
+
+If you're lucky all you need is:
+
+```bash
+paru -S fprintd
+```
+
+if you need boader compatibiliy:
+
+```bash
+paru -S open-fprintd fprintd-clients python-validity
+```
+
+and then:
+
+```bash
+sudo systemctl start python3-validity
+sudo systemctl enable python3-validity
+sudo systemctl start open-fprintd
+sudo systemctl enable open-fprintd
+```
+
+after that try:
+
+```bash
+fprintd enroll
+```
+
+to see if it worked.
+
+If it did now we make it useable by adding:
+
+`auth      sufficient    pam_fprintd.so`
+
+at the top of the file (2nd line) in these three files:
+
+```bash
+sudo vim /etc/pam.d/sddm
+```
+
+```bash
+sudo vim /etc/pam.d/sddm
+```
+
+```bash
+sudo vim /etc/pam.d/sddm
+```
+
+then you can go to `KDE settings -> users -> add fingerprint` and register your fingers.
