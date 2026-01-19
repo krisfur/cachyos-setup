@@ -8,8 +8,8 @@ Switch to Next Keyboard Layout=Meta+Alt+K
 [StandardShortcuts]
 AboutApp=
 AboutKDE=
-Activate Next Tab=Ctrl+]; Ctrl+PgDown
-Activate Previous Tab=Ctrl+PgUp; Ctrl+[
+Activate Next Tab=Ctrl+PgDown; Ctrl+]
+Activate Previous Tab=Ctrl+[; Ctrl+PgUp
 ActualSize=Ctrl+0
 AddBookmark=Ctrl+B
 Back=Back; Alt+Left
@@ -17,10 +17,10 @@ BackwardWord=Ctrl+Left
 Begin=Ctrl+Home
 BeginningOfLine=Home
 Clear=
-Close=Ctrl+Esc; Ctrl+W
+Close=Ctrl+W; Ctrl+Esc
 ConfigureNotifications=
 ConfigureToolbars=
-Copy=Ctrl+C; Ctrl+Ins
+Copy=Ctrl+Ins; Ctrl+C
 CreateFolder=Ctrl+Shift+N
 Cut=Shift+Del; Ctrl+X
 DeleteFile=Shift+Del
@@ -39,14 +39,14 @@ FindPrev=Shift+F3
 FitToHeight=
 FitToPage=
 FitToWidth=
-Forward=Forward; Alt+Right
+Forward=Alt+Right; Forward
 ForwardWord=Ctrl+Right
 FullScreen=Ctrl+Shift+F
 Goto=
 GotoLine=Ctrl+G
 GotoPage=
 Help=F1
-Home=Home Page; Alt+Home
+Home=Alt+Home; Home Page
 KeyBindings=Ctrl+Alt+,
 Mail=
 MoveToTrash=Del
@@ -54,7 +54,7 @@ New=Ctrl+N
 Next=PgDown
 NextCompletion=Ctrl+Down
 Open=Ctrl+O
-OpenContextMenu=Shift+F10; Menu
+OpenContextMenu=Menu; Shift+F10
 OpenMainMenu=F10
 OpenRecent=
 Paste=Ctrl+V; Shift+Ins
@@ -88,7 +88,7 @@ Undo=Ctrl+Z
 Up=Alt+Up
 WhatsThis=Shift+F1
 Zoom=
-ZoomIn=Ctrl+=; Ctrl++
+ZoomIn=Ctrl++; Ctrl+=
 ZoomOut=Ctrl+-
 
 [btop.desktop][Global Shortcuts]
@@ -118,7 +118,7 @@ mute=Volume Mute
 
 [ksmserver][Global Shortcuts]
 Halt Without Confirmation=
-Lock Session=Meta+L; Screensaver
+Lock Session=Screensaver; Meta+L
 Log Out=Ctrl+Alt+Del
 Log Out Without Confirmation=
 LogOut=
@@ -153,7 +153,7 @@ Switch Window Down=Meta+Alt+Down
 Switch Window Left=Meta+Alt+Left
 Switch Window Right=Meta+Alt+Right
 Switch Window Up=Meta+Alt+Up
-Switch to Desktop 1=Meta+1; Ctrl+F1
+Switch to Desktop 1=Ctrl+F1; Meta+1
 Switch to Desktop 10=
 Switch to Desktop 11=
 Switch to Desktop 12=
@@ -164,9 +164,9 @@ Switch to Desktop 16=
 Switch to Desktop 17=
 Switch to Desktop 18=
 Switch to Desktop 19=
-Switch to Desktop 2=Ctrl+F2; Meta+2
+Switch to Desktop 2=Meta+2; Ctrl+F2
 Switch to Desktop 20=
-Switch to Desktop 3=Ctrl+F3; Meta+3
+Switch to Desktop 3=Meta+3; Ctrl+F3
 Switch to Desktop 4=Ctrl+F4; Meta+4
 Switch to Desktop 5=Meta+5
 Switch to Desktop 6=
@@ -201,7 +201,7 @@ Walk Through Windows of Current Application Alternative=
 Walk Through Windows of Current Application Alternative (Reverse)=
 Window Above Other Windows=
 Window Below Other Windows=
-Window Close=Alt+F4
+Window Close=Alt+F4; Meta+W
 Window Custom Quick Tile Bottom=
 Window Custom Quick Tile Left=
 Window Custom Quick Tile Right=
@@ -306,7 +306,7 @@ RunClipboard=Alt+Shift+F2
 _launch=Search; Alt+Space; Alt+F2
 
 [org.kde.kscreen.desktop][Global Shortcuts]
-ShowOSD=Meta+P; Display
+ShowOSD=Display; Meta+P
 
 [org.kde.plasma-systemmonitor.desktop][Global Shortcuts]
 _launch=Meta+Esc
@@ -319,7 +319,7 @@ ActiveWindowScreenShot=Meta+Print
 CurrentMonitorScreenShot=
 FullScreenScreenShot=Shift+Print
 OpenWithoutScreenshot=
-RecordRegion=Meta+Shift+R; Meta+R
+RecordRegion=Meta+R; Meta+Shift+R
 RecordScreen=Meta+Alt+R
 RecordWindow=Meta+Ctrl+R
 RectangularRegionScreenShot=Meta+Shift+Print
@@ -329,7 +329,7 @@ _launch=Meta+Shift+S; Print
 [org.kde.touchpadshortcuts.desktop][Global Shortcuts]
 DisableTouchpad=Touchpad Off
 EnableTouchpad=Touchpad On
-ToggleTouchpad=Meta+Ctrl+Touchpad Toggle; Touchpad Toggle; Meta+Ctrl+Zenkaku Hankaku
+ToggleTouchpad=Touchpad Toggle; Meta+Ctrl+Touchpad Toggle; Meta+Ctrl+Zenkaku Hankaku
 
 [org_kde_powerdevil][Global Shortcuts]
 Decrease Keyboard Brightness=Keyboard Brightness Down
@@ -344,7 +344,7 @@ PowerOff=Power Off
 Sleep=Sleep
 Toggle Keyboard Backlight=Keyboard Light On/Off
 Turn Off Screen=
-powerProfile=Battery; Meta+B
+powerProfile=Meta+B; Battery
 
 [plasmashell][Global Shortcuts]
 Slideshow Wallpaper Next Image=

@@ -15,16 +15,10 @@ Then make it default in the settings.
 2. Install a good browser:
 
 ```bash
-paru -S zen-browser-bin
-```
-
-And log in to `mozilla account` for bookmarks, `proton pass` for passwords and passkeys, and `github`.
-
-For lighter experience with no bookmark sync go:
-
-```bash
 paru -S helium-browser-bin
 ```
+
+And log in to `proton pass` for passwords and passkeys, and `github`.
 
 3. Get `huginn` to make installing stuff easy.
 
@@ -118,7 +112,7 @@ Afterwards get the `anthropic API` key from `proton pass` and configure that age
   "theme": {
     "mode": "system",
     "light": "One Light",
-    "dark": "Zedokai Darker (Filter Ristretto)"
+    "dark": "Zedokai Darker (Filter Spectrum)"
   },
   "lsp": {
     "vscode-css-language-server": {
