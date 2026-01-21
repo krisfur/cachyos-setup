@@ -160,7 +160,7 @@ curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
 4. Install `zig` (pacman)
 5. Install `cmake` (pacman)
 6. Install `go` (pacman)
-7. Install `odin`:
+7. Install `odin` (this is compiled from source! takes ages every update on slow machines):
 
 ```bash
 paru -S odin-git
@@ -172,8 +172,7 @@ paru -S odin-git
 curl -fsSL https://bun.sh/install | bash
 ```
 
-9. Install `texlive-bin` and then `texlive-latexextra` (pacman)
-10. Install `neovim` (pacman) and `fresh-editor-bin` (AUR)
+9. Install `texlive-bin` (pacman)
 
 ## Troubleshooting issues
 
