@@ -111,43 +111,10 @@ curl -f https://zed.dev/install.sh | sh
 
 and add the `Zedokai` extension and set it to `Zedokai Darker (Filter Spectrum)`. All other needed extensions will pop up when you open a file of a certain language, other than `odin`.
 
-Afterwards get the `anthropic API` key from `proton pass` and configure that agent, and then use this in zed `settings.json`:
+2. Install `Claude Code`:
 
-```json
-{
-  "agent": {
-    "default_profile": "write",
-    "default_model": {
-      "provider": "anthropic",
-      "model": "claude-haiku-4-5-latest"
-    },
-    "model_parameters": []
-  },
-  "show_edit_predictions": false,
-  "ui_font_size": 16,
-  "buffer_font_size": 15,
-  "theme": {
-    "mode": "system",
-    "light": "One Light",
-    "dark": "Zedokai Darker (Filter Spectrum)"
-  },
-  "lsp": {
-    "vscode-css-language-server": {
-      "settings": {
-        "css": {
-          "lint": {
-            "unknownAtRules": "ignore"
-          }
-        },
-        "scss": {
-          "lint": {
-            "unknownAtRules": "ignore"
-          }
-        }
-      }
-    }
-  }
-}
+```bash
+curl -fsSL https://claude.ai/install.sh | bash
 ```
 
 2. Install `uv` (pacman)
