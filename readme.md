@@ -199,18 +199,16 @@ If it did now we make it useable by adding:
 
 `auth      sufficient    pam_fprintd.so`
 
-at the top of the file (2nd line) in these three files:
+at the top of the file (2nd line) in these two files:
 
 ```bash
-sudo vim /etc/pam.d/sddm
+sudo vim /etc/pam.d/sudo
 ```
 
 ```bash
 sudo vim /etc/pam.d/sddm
 ```
 
-```bash
-sudo vim /etc/pam.d/sddm
-```
+warning: sddm can sometimes bug out and always require a fingerprint and not the password, looking into that.
 
 then you can go to `KDE settings -> users -> add fingerprint` and register your fingers.
