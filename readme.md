@@ -64,7 +64,7 @@ git config --global user.name "Krzysztof Furman"
 git config --global init.defaultBranch main
 ```
 
-## System settings
+## System settings - KDE
 
 In the settings we need to change a few things:
 
@@ -83,8 +83,6 @@ Then right click the pager and set it to show windows and icons.
 - btop `meta+shift+T`) (add new application)
 
 or import the included `shortcuts.kksrc` file.
-
-NOTE: change desktop with meta+number doesn't always set by default from import
 
 3. Set `wallpaper` (from `proton drive` or this repo), `lock screen` background, `accent colours` (`#aaffff`), and `SDDM login screen` background.
 
@@ -105,7 +103,7 @@ You can also change the bottom left icon to the orange logo: click the current l
 
 0. Install `neovim`:
 
-See [the neovim folder](./neovim/nvim.md)
+See [the neovim folder.](./neovim/nvim.md)
 
 1. Install `Zed`:
 
@@ -215,4 +213,4 @@ sudo vim /etc/pam.d/sddm
 
 warning: sddm can sometimes bug out and always require a fingerprint and not the password, looking into that.
 
-then you can go to `KDE settings -> users -> add fingerprint` and register your fingers.
+On KDE: then you can go to `KDE settings -> users -> add fingerprint` and register your fingers.
