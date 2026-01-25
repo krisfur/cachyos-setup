@@ -103,6 +103,10 @@ You can also change the bottom left icon to the orange logo: click the current l
 
 ## Dev stuff
 
+0. Install `neovim`:
+
+See [the neovim folder](./neovim/nvim.md)
+
 1. Install `Zed`:
 
 ```bash
