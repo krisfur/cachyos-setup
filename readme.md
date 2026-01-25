@@ -20,33 +20,14 @@ paru -S helium-browser-bin
 
 And log in to `proton pass` for passwords and passkeys, and `github`.
 
-3. Get `huginn` to make installing stuff easy.
+3. Get `paclook` to make installing stuff easy.
 
-The repo lives [here](https://github.com/krisfur/huginn.git).
+The repo lives [here](https://github.com/krisfur/paclook.git).
 
 On x86_64 just grab the tarball:
 
 ```bash
-curl -L -O https://github.com/krisfur/huginn/releases/download/v1.0.2/huginn-v1.0.2-linux_x86_64.tar.gz
-tar -xzf huginn-v1.0.2-linux_x86_64.tar.gz
-sudo cp huginn-v1.0.2-linux_x86_64/huginn /usr/local/bin/huginn
-```
-
-Otherwise build from source:
-
-- get the odin compiler
-
-```bash
-paru -S odin-git
-```
-
-- clone and build
-
-```bash
-git clone https://github.com/krisfur/huginn.git
-cd huginn
-odin build .
-sudo cp huginn /usr/local/bin/huginn
+curl -fL https://github.com/krisfur/paclook/releases/download/v0.9.2/paclook-v0.9.2-linux-x86_64.tar.gz | tar -xz --strip-components=1 && sudo install -m 755 paclook /usr/local/bin/paclook
 ```
 
 4. Set up github:
