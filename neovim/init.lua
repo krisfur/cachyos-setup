@@ -439,6 +439,9 @@ require("lazy").setup({
 			vim.api.nvim_set_hl(0, "Visual", { bg = "#3b4252" })
 			vim.api.nvim_set_hl(0, "TelescopeSelectionCaret", { fg = accent })
 			vim.api.nvim_set_hl(0, "TelescopeMatching", { fg = accent })
+
+			-- Make JSON/JSONC quotes same color as strings for readability
+			vim.api.nvim_set_hl(0, "jsonQuote", { link = "String" })
 		end,
 	},
 
