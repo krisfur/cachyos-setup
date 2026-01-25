@@ -25,10 +25,7 @@
   },
   "modules": [
     "title",
-
-    // ============================================
-    //  HARDWARE CARD (ZIG YELLOW)
-    // ============================================
+    // HARDWARE
     {
       "type": "custom",
       "format": "{#title}┌── {#keys} Hardware {#title}────────────────────────────────────┐"
@@ -67,7 +64,7 @@
       "type": "custom",
       "format": "{#title}└──────────────────────────────────────────────────┘"
     },
-
+    // SOFTWARE
     {
       "type": "custom",
       "format": "{#title}┌── {#keys} Software {#title}──────────────┐"
@@ -100,7 +97,7 @@
       "type": "custom",
       "format": "{#title}└────────────────────────────┘"
     },
-
+    // DESTKOP
     {
       "type": "custom",
       "format": "{#title}┌── {#keys} Desktop {#title}──────────────┐"
