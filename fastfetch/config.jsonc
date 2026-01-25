@@ -9,19 +9,19 @@
     "padding": {
       "top": 3,
       "left": 2,
-      "right": 4,
-    },
+      "right": 4
+    }
   },
   "display": {
     "separator": " ",
     "color": {
       "keys": "38;2;170;255;255",
       "title": "38;2;76;87;127",
-      "output": "38;2;255;255;255",
+      "output": "38;2;255;255;255"
     },
     "size": {
-      "binaryPrefix": "si",
-    },
+      "binaryPrefix": "si"
+    }
   },
   "modules": [
     "title",
@@ -31,111 +31,105 @@
     // ============================================
     {
       "type": "custom",
-      "format": "{#title}┌── {#keys} Hardware {#title}────────────────────────────────────┐",
+      "format": "{#title}┌── {#keys} Hardware {#title}────────────────────────────────────┐"
     },
     {
       "type": "host",
-      "key": "│ ",
+      "key": "│ "
     },
     {
       "type": "cpu",
       "key": "│ ├─ ",
-      "format": "{1}",
+      "format": "{1}"
     },
     {
       "type": "gpu",
-      "key": "│ ├─ ",
+      "key": "│ ├─ "
     },
     {
       "type": "display",
-      "key": "│ ├─ 󰍹",
+      "key": "│ ├─ 󰍹"
     },
     {
       "type": "memory",
-      "key": "│ ├─ ",
+      "key": "│ ├─ "
     },
     {
       "type": "disk",
       "key": "│ ├─ ",
-      "folders": "/",
+      "folders": "/"
     },
     {
       "type": "battery",
-      "key": "│ └─ ",
+      "key": "│ └─ "
     },
     {
       "type": "custom",
-      "format": "{#title}└──────────────────────────────────────────────────┘",
+      "format": "{#title}└──────────────────────────────────────────────────┘"
     },
 
-    // ============================================
-    //  SOFTWARE CARD (RUST ORANGE)
-    // ============================================
     {
       "type": "custom",
-      "format": "{#title}┌── {#keys} Software {#title}──────────────┐",
+      "format": "{#title}┌── {#keys} Software {#title}──────────────┐"
     },
     {
       "type": "os",
-      "key": "│ ",
+      "key": "│ "
     },
     {
       "type": "kernel",
-      "key": "│ ├─ ",
+      "key": "│ ├─ "
     },
     {
       "type": "uptime",
-      "key": "│ ├─ ",
+      "key": "│ ├─ "
     },
     {
       "type": "packages",
-      "key": "│ ├─ ",
+      "key": "│ ├─ "
     },
     {
       "type": "shell",
-      "key": "│ ├─ ",
+      "key": "│ ├─ "
     },
     {
       "type": "terminal",
-      "key": "│ └─ ",
+      "key": "│ └─ "
     },
     {
       "type": "custom",
-      "format": "{#title}└────────────────────────────┘",
+      "format": "{#title}└────────────────────────────┘"
     },
 
-    // ============================================
-    //  DESKTOP CARD (ZIG YELLOW)
-    // ============================================
     {
       "type": "custom",
-      "format": "{#title}┌── {#keys} Desktop {#title}──────────────┐",
+      "format": "{#title}┌── {#keys} Desktop {#title}──────────────┐"
     },
     {
       "type": "de",
-      "key": "│ ",
+      "key": "│ "
     },
     {
       "type": "wm",
-      "key": "│ ├─ ",
+      "key": "│ ├─ "
     },
     {
       "type": "wmtheme",
-      "key": "│ ├─ ",
+      "key": "│ ├─ "
     },
     {
       "type": "theme",
       "key": "│ └─ ",
-      "format": "{1}",
+      "format": "{1}"
     },
     {
       "type": "custom",
-      "format": "{#title}└───────────────────────────┘",
+      "format": "{#title}└───────────────────────────┘"
     },
     {
       "type": "colors",
       "symbol": "square",
-      "paddingLeft": 2,
-    },
-  ],
+      "paddingLeft": 2
+    }
+  ]
 }
