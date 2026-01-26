@@ -354,6 +354,27 @@ require("lazy").setup({
 			}
 			vim.lsp.enable("ruff")
 
+			-- Find python path: activated venv > nearest .venv > system python
+			local function find_python()
+				-- Check for activated venv first
+				local virtual_env = os.getenv("VIRTUAL_ENV")
+				if virtual_env then
+					return virtual_env .. "/bin/python"
+				end
+
+				-- Walk up from cwd to find .venv
+				local path = vim.fn.getcwd()
+				while path ~= "/" do
+					local venv = path .. "/.venv/bin/python"
+					if vim.fn.executable(venv) == 1 then
+						return venv
+					end
+					path = vim.fn.fnamemodify(path, ":h")
+				end
+
+				return "python"
+			end
+
 			-- Set up pyright with venv detection
 			vim.lsp.config.pyright = {
 				cmd = { "pyright-langserver", "--stdio" },
@@ -361,13 +382,7 @@ require("lazy").setup({
 				root_markers = { "pyproject.toml", "setup.py", "setup.cfg", "requirements.txt", ".git" },
 				settings = {
 					python = {
-						pythonPath = (function()
-							local venv = vim.fn.getcwd() .. "/.venv/bin/python"
-							if vim.fn.executable(venv) == 1 then
-								return venv
-							end
-							return "python"
-						end)(),
+						pythonPath = find_python(),
 					},
 				},
 			}
