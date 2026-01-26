@@ -309,7 +309,6 @@ require("lazy").setup({
 				rust_analyzer = {},
 				zls = {},
 				ols = {},
-				ruff = {},
 				lua_ls = {
 					settings = {
 						Lua = {
@@ -339,6 +338,40 @@ require("lazy").setup({
 					end,
 				},
 			})
+
+			-- Set up ruff using vim.lsp.config (Neovim 0.11+)
+			vim.lsp.config.ruff = {
+				cmd = { "ruff", "server" },
+				filetypes = { "python" },
+				root_markers = { "pyproject.toml", "ruff.toml", ".ruff.toml", ".git" },
+				init_options = {
+					settings = {
+						lint = {
+							extendIgnore = { "F401", "F821" },
+						},
+					},
+				},
+			}
+			vim.lsp.enable("ruff")
+
+			-- Set up pyright with venv detection
+			vim.lsp.config.pyright = {
+				cmd = { "pyright-langserver", "--stdio" },
+				filetypes = { "python" },
+				root_markers = { "pyproject.toml", "setup.py", "setup.cfg", "requirements.txt", ".git" },
+				settings = {
+					python = {
+						pythonPath = (function()
+							local venv = vim.fn.getcwd() .. "/.venv/bin/python"
+							if vim.fn.executable(venv) == 1 then
+								return venv
+							end
+							return "python"
+						end)(),
+					},
+				},
+			}
+			vim.lsp.enable("pyright")
 		end,
 	},
 
