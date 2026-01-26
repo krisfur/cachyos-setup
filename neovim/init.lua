@@ -442,6 +442,9 @@ require("lazy").setup({
 
 			-- Make JSON/JSONC quotes same color as strings for readability
 			vim.api.nvim_set_hl(0, "jsonQuote", { link = "String" })
+
+			-- Highlight inline code in markdown (backtick text like `hello`)
+			vim.api.nvim_set_hl(0, "@markup.raw.markdown_inline", { fg = "#ebcb8b" })
 		end,
 	},
 
