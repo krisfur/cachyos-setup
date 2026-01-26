@@ -7,7 +7,13 @@
 1. Get a good terminal emulator:
 
 ```bash
-pacman -S ghostty
+sudo pacman -S ghostty
+```
+
+and a way to view images inside it:
+
+```bash
+sudo pacman -S viu
 ```
 
 Then make it default in the settings.
