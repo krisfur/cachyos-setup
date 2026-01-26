@@ -421,14 +421,19 @@ require("lazy").setup({
 	},
 
 	{ -- Colorscheme
-		"shaunsingh/nord.nvim",
+		"EdenEast/nightfox.nvim",
 		priority = 1000,
 		config = function()
-			vim.g.nord_contrast = true
-			vim.g.nord_borders = true
-			vim.g.nord_italic = false
-			vim.g.nord_bold = false
-			require("nord").set()
+			require("nightfox").setup({
+				options = {
+					styles = {
+						comments = "NONE",
+						keywords = "NONE",
+						functions = "NONE",
+					},
+				},
+			})
+			vim.cmd.colorscheme("nordfox")
 
 			-- Custom accent color overrides
 			local accent = "#aaffff"
