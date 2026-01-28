@@ -215,6 +215,14 @@ require("lazy").setup({
 					map("gO", require("telescope.builtin").lsp_document_symbols, "Open Document Symbols")
 					map("gW", require("telescope.builtin").lsp_dynamic_workspace_symbols, "Open Workspace Symbols")
 					map("grt", require("telescope.builtin").lsp_type_definitions, "[G]oto [T]ype Definition")
+					map("gh", function()
+						local params = { uri = vim.uri_from_bufnr(0) }
+						vim.lsp.buf_request(0, "textDocument/switchSourceHeader", params, function(_, result)
+							if result then
+								vim.cmd.edit(vim.uri_to_fname(result))
+							end
+						end)
+					end, "Switch [H]eader/Source")
 
 					---@param client vim.lsp.Client
 					---@param method vim.lsp.protocol.Method
