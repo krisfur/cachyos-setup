@@ -380,6 +380,14 @@ require("lazy").setup({
 				},
 			}
 			vim.lsp.enable("pyright")
+
+			-- Set up tinymist for Typst
+			vim.lsp.config.tinymist = {
+				cmd = { "tinymist" },
+				filetypes = { "typst" },
+				root_markers = { "typst.toml", ".git" },
+			}
+			vim.lsp.enable("tinymist")
 		end,
 	},
 
@@ -536,6 +544,7 @@ require("lazy").setup({
 				"rust",
 				"sql",
 				"typescript",
+				"typst",
 				"vim",
 				"vimdoc",
 				"zig",
@@ -571,6 +580,18 @@ require("lazy").setup({
 		keys = {
 			{ "<leader>mp", "<cmd>MarkdownPreviewToggle<CR>", desc = "[M]arkdown [P]review toggle" },
 		},
+	},
+
+	{ -- Typst preview in browser
+		"chomosuke/typst-preview.nvim",
+		ft = "typst",
+		build = function()
+			require("typst-preview").update()
+		end,
+		keys = {
+			{ "<leader>tp", "<cmd>TypstPreviewToggle<CR>", ft = "typst", desc = "[T]ypst [P]review toggle" },
+		},
+		opts = {},
 	},
 
 	-- Add plugins here

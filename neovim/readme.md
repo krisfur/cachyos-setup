@@ -65,6 +65,7 @@ On first launch:
 | `<Space>/` | Fuzzy search in current buffer |
 | `<Space><Space>` | Switch buffers |
 | `<Space>mp` | Markdown preview toggle |
+| `<Space>tp` | Typst preview toggle |
 | `<Space>f` | Format buffer |
 | `<Space>th` | Toggle inlay hints |
 | `grd` | Go to definition |
