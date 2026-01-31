@@ -128,7 +128,7 @@ paru -S odin-git
 curl -fsSL https://bun.sh/install | bash
 ```
 
-9. Install `texlive-bin` (pacman)
+9. Install `typst` (pacman)
 
 ## Troubleshooting issues
 
