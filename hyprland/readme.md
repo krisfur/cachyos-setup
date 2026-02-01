@@ -15,6 +15,12 @@ neovim github-cli nordic-theme papirus-icon-theme \
 nodejs npm tree-sitter-cli cmake go zig uv typst
 ```
 
+and add user to input group for waybar:
+
+```bash
+sudo usermod -aG input $USER
+```
+
 `Claude Code`:
 ```bash
 curl -fsSL https://claude.ai/install.sh | bash
