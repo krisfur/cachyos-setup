@@ -1,0 +1,14 @@
+{
+    "layer": "top",
+    "position": "top", // Can be top, bottom, left, right
+    "height": 34,
+
+    "modules-left": ["hyprland/workspaces", "hyprland/window"],
+    "modules-center": ["clock"],
+    "modules-right": ["network", "cpu", "memory", "pulseaudio", "battery", "tray"],
+
+    // Module configurations go below...
+    "clock": {
+        "format": "{:%H:%M}"
+    }
+}

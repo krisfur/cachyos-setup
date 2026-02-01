@@ -1,12 +1,73 @@
-#workspace, #clock, #pulseaudio, #network, #cpu, #memory, #battery {
-	background: #3b4252;
-	color: #88c0d0;
-	padding: 0 15px;
-	margin: 5px 3px;
-	border-radius: 20px;
-	border: 1px solid #4c566a;
+window#waybar {
+    background: transparent;
+    font-family: "JetBrainsMono Nerd Font", sans-serif;
+    font-size: 13px;
 }
 
-window#waybar {
-	background: transparent;
+/* Grouping modules for a consistent "Pill" look */
+#workspaces, 
+#clock, 
+#pulseaudio, 
+#network, 
+#cpu, 
+#memory, 
+#battery, 
+#window, 
+#tray {
+    background: #3b4252;
+    color: #eceff4;
+    padding: 2px 12px;
+    margin: 5px 3px;
+    border-radius: 8px;
+    border: 1px solid #4c566a;
 }
+
+/* Specifically for Workspaces buttons */
+#workspaces button {
+    padding: 0 5px;
+    color: #81a1c1;
+    background: transparent;
+    border: none;
+}
+
+#workspaces button.active {
+    background: #88c0d0;
+    color: #2e3440;
+    border-radius: 6px;
+}
+
+#workspaces button:hover {
+    background: #4c566a;
+    color: #eceff4;
+}
+
+/* Status Colors */
+#pulseaudio.muted {
+    background-color: #bf616a;
+}
+
+#network.disconnected {
+    background-color: #d08770;
+}
+
+#battery.warning {
+    background-color: #ebcb8b; /* Yellow */
+    color: #2e3440;
+}
+
+#battery.critical:not(.charging) {
+    background-color: #bf616a;
+    animation-name: blink;
+    animation-duration: 0.5s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+
+@keyframes blink {
+    to {
+        background-color: #eceff4;
+        color: #2e3440;
+    }
+}
+

@@ -13,7 +13,7 @@ bluetuith-bin gazelle-tui hyprshot \
 fuzzel nwg-look qt6-wayland helium-browser-bin \
 neovim github-cli nordic-theme papirus-icon-theme \
 nodejs npm tree-sitter-cli cmake go zig uv typst viu \
-brightnessctl
+brightnessctl ttf-jetbrains-mono-nerd
 ```
 
 and add user to input group for waybar:
@@ -80,6 +80,7 @@ cp fuzzel.ini ~/.config/fuzzel/
 #waybar
 mkdir -p ~/.config/waybar
 cp waybar-style.css ~/.config/waybar/style.css
+cp waybar-config ~/.config/waybar/config
 #neovim
 mkdir -p ~/.config/nvim
 cp ../neovim/init.lua ~/.config/nvim/
