@@ -1,0 +1,12 @@
+#workspace, #clock, #pulseaudio, #network, #cpu, #memory, #battery {
+	background: #3b4252;
+	color: #88c0d0;
+	padding: 0 15px;
+	margin: 5px 3px;
+	border-radius: 20px;
+	border: 1px solid #4c566a;
+}
+
+window#waybar {
+	background: transparent;
+}
