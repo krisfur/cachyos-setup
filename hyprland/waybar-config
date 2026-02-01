@@ -1,14 +1,77 @@
 {
     "layer": "top",
-    "position": "top", // Can be top, bottom, left, right
+    "position": "top",
     "height": 34,
+    "spacing": 4,
 
     "modules-left": ["hyprland/workspaces", "hyprland/window"],
     "modules-center": ["clock"],
     "modules-right": ["network", "cpu", "memory", "pulseaudio", "battery", "tray"],
 
-    // Module configurations go below...
+    "hyprland/workspaces": {
+        "format": "{icon}",
+        "on-click": "activate",
+        "format-icons": {
+            "active": "󰮯",
+            "default": "󰊠"
+        }
+    },
+
+    "hyprland/window": {
+        "format": "󱂬 {title}",
+        "max-length": 35,
+        "rewrite": {
+            "": "Hyprland",
+            "(.*) — Mozilla Firefox": "󰈹 Firefox",
+            "(.*) - Ghostty": "❯ Terminal"
+        }
+    },
+
     "clock": {
-        "format": "{:%H:%M}"
+        "format": "󱑂 {:%H:%M}",
+        "format-alt": "󰃭 {:%Y-%m-%d}",
+        "tooltip-format": "<tt><small>{calendar}</small></tt>"
+    },
+
+    "network": {
+        "format-wifi": "󰖩 {essid}",
+        "format-ethernet": "󰈀 {ifname}",
+        "format-disconnected": "󰖪 Disconnected",
+        "on-click": "ghostty -e gazelle" 
+    },
+
+    "cpu": {
+        "format": "󰓅 {usage}%", 
+        "interval": 2
+    },
+
+    "memory": {
+        "format": "󰑭 {percentage}%", 
+        "interval": 5
+    },
+
+    "pulseaudio": {
+        "format": "{icon} {volume}%",
+        "format-muted": "󰝟 Muted",
+        "format-icons": {
+            "headphone": "󰋋",
+            "default": ["󰕿", "󰖀", "󰕾"]
+        },
+        "on-click": "pavucontrol"
+    },
+
+    "battery": {
+        "states": {
+            "warning": 30,
+            "critical": 15
+        },
+        "format": "{icon} {capacity}%",
+        "format-charging": "󰂄 {capacity}%",
+        "format-icons": ["󰂎", "󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"]
+    },
+
+    "tray": {
+        "icon-size": 16,
+        "spacing": 10
     }
 }
