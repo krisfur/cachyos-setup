@@ -52,6 +52,14 @@ cp ../fastfetch/* ~/.config/fastfetch/
 fastfetch --logo-recache
 ```
 
+SDDM theme:
+
+```bash
+bash -c "$(curl -fsSL https://raw.githubusercontent.com/keyitdev/sddm-astronaut-theme/master/setup.sh)"
+```
+
+and select `purple leaves`.
+
 Remove bloat:
 
 ```bash
@@ -61,14 +69,21 @@ paru -R alacritty firefox dolphin kitty meld
 ## Configs
 
 ```bash
+#wallpaper
 cp ../wallpaper.png ~/.config/hypr/
+#hyprland
 cp hyprland.conf ~/.config/hypr/
+#fuzzel
 mkdir -p ~/.config/fuzzel
 cp fuzzel.ini ~/.config/fuzzel/
+#waybar
 mkdir -p ~/.config/waybar
 cp style.css ~/.config/waybar/
+#neovim
 mkdir -p ~/.config/nvim
 cp ../neovim/init.lua ~/.config/nvim/
+#hyprlock
+cp hyprlock.conf ~/.config/hypr/
 ```
 
 git config:
