@@ -12,7 +12,7 @@ swaync hyprpolkitagent hyprlock \
 bluetuith-bin gazelle-tui hyprshot \
 fuzzel nwg-look qt6-wayland helium-browser-bin \
 neovim github-cli nordic-theme papirus-icon-theme \
-nodejs npm tree-sitter-cli cmake go zig uv typst
+nodejs npm tree-sitter-cli cmake go zig uv typst viu
 ```
 
 and add user to input group for waybar:
@@ -50,6 +50,12 @@ Fastfetch:
 fastfetch --gen-config
 cp ../fastfetch/* ~/.config/fastfetch/
 fastfetch --logo-recache
+```
+
+Remove bloat:
+
+```bash
+paru -R alacritty firefox dolphin kitty meld
 ```
 
 ## Configs
