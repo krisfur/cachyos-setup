@@ -37,7 +37,7 @@ curl -fL https://github.com/krisfur/paclook/releases/download/v0.9.2/paclook-v0.
 ```
 
 4. Set up github:
-Get `github-cli` using `pacman` or `huginn`, then run:
+Get `github-cli` using `pacman` or `paclook`, then run:
 
 ```bash
 gh auth login
