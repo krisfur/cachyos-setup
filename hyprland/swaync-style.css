@@ -33,3 +33,27 @@
     color: #88c0d0;
     font-size: 20px;
 }
+
+/* Critical (Red) Notifications */
+.notification.critical {
+    border: 2px solid #bf616a; /* Nord Red Border */
+    background: rgba(191, 97, 106, 0.1); /* Subtle Red Tint */
+}
+
+.notification.critical .notification-content .summary {
+    color: #bf616a; /* Critical Title in Red */
+    font-weight: bold;
+}
+
+.notification.critical .notification-content .body {
+    color: #eceff4; /* Keep body readable but bright */
+}
+
+/* Standard (Non-critical) Text color - Nord Snow Storm */
+.notification-content .summary {
+    color: #88c0d0; /* Titles in Frost Blue */
+}
+
+.notification-content .body {
+    color: #d8dee9; /* Body in Nord Light Grey */
+}
