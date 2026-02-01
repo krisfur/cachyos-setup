@@ -14,8 +14,9 @@ swaync hyprpolkitagent hyprlock \
 bluetuith-bin gazelle-tui hyprshot \
 fuzzel nwg-look qt6-wayland helium-browser-bin \
 neovim github-cli nordic-theme papirus-icon-theme \
-nodejs npm tree-sitter-cli cmake go zig uv typst viu \
-brightnessctl ttf-jetbrains-mono-nerd
+nodejs npm tree-sitter-cli cmake go zig uv typst \
+brightnessctl ttf-jetbrains-mono-nerd imv mpv \
+audacious gimp viu
 ```
 
 and add user to input group for waybar:
