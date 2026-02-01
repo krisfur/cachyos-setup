@@ -1,0 +1,32 @@
+@define-color background rgba(46, 52, 64, 0.9); /* Nord Polar Night */
+@define-color border #81a1c1;                 /* Nord Frost Blue */
+@define-color critical #bf616a;               /* Nord Red */
+
+.notification-row {
+    outline: none;
+    margin: 10px;
+    padding: 0;
+}
+
+.notification {
+    background: @background;
+    border: 2px solid @border;
+    border-radius: 12px;
+    color: #d8dee9;
+    padding: 15px;
+}
+
+.notification-content {
+    background: transparent;
+}
+
+.close-button {
+    background: #4c566a;
+    color: #eceff4;
+    border-radius: 10px;
+}
+
+.widget-title {
+    color: #88c0d0;
+    font-size: 1.5rem;
+}

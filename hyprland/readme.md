@@ -78,12 +78,15 @@ mkdir -p ~/.config/fuzzel
 cp fuzzel.ini ~/.config/fuzzel/
 #waybar
 mkdir -p ~/.config/waybar
-cp style.css ~/.config/waybar/
+cp waybar-style.css ~/.config/waybar/style.css
 #neovim
 mkdir -p ~/.config/nvim
 cp ../neovim/init.lua ~/.config/nvim/
 #hyprlock
 cp hyprlock.conf ~/.config/hypr/
+#swaync
+mkdir -p ~/.config/swaync
+cp swaync-style.css ~/.config/swaync/style.css
 ```
 
 git config:
