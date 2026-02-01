@@ -64,3 +64,12 @@ cp style.css ~/.config/waybar/
 mkdir -p ~/.config/nvim
 cp ../neovim/init.lua ~/.config/nvim/
 ```
+
+git config:
+
+```bash
+git config --global user.email "k_furman@outlook.com"
+git config --global user.name "Krzysztof Furman"
+git config --global init.defaultBranch main
+```
+
