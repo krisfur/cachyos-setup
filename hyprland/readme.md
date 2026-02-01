@@ -40,7 +40,7 @@ curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
 curl -fsSL https://bun.sh/install | bash
 ```
 
-Theme stuff:
+## Set themes (rest is set in the hyprland.conf on a restart):
 
 ```bash
 nwg-look
@@ -64,7 +64,7 @@ bash -c "$(curl -fsSL https://raw.githubusercontent.com/keyitdev/sddm-astronaut-
 
 and select `purple leaves`.
 
-Remove bloat:
+## Remove bloat:
 
 ```bash
 paru -R alacritty firefox dolphin kitty meld
