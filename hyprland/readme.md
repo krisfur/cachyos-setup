@@ -40,6 +40,11 @@ curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
 curl -fsSL https://bun.sh/install | bash
 ```
 
+`Paclook`:
+```bash
+curl -fL https://github.com/krisfur/paclook/releases/download/v0.9.2/paclook-v0.9.2-linux-x86_64.tar.gz | tar -xz && sudo install -m 755 paclook-v0.9.2-linux-x86_64/paclook /usr/local/bin/paclook && rm -r paclook-v0.9.2-linux-x86_64/
+```
+
 ## Set themes (rest is set in the hyprland.conf on a restart):
 
 ```bash

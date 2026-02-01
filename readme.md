@@ -33,7 +33,7 @@ The repo lives [here](https://github.com/krisfur/paclook.git).
 On x86_64 just grab the tarball:
 
 ```bash
-curl -fL https://github.com/krisfur/paclook/releases/download/v0.9.2/paclook-v0.9.2-linux-x86_64.tar.gz | tar -xz --strip-components=1 && sudo install -m 755 paclook /usr/local/bin/paclook
+curl -fL https://github.com/krisfur/paclook/releases/download/v0.9.2/paclook-v0.9.2-linux-x86_64.tar.gz | tar -xz && sudo install -m 755 paclook-v0.9.2-linux-x86_64/paclook /usr/local/bin/paclook && rm -r paclook-v0.9.2-linux-x86_64/
 ```
 
 4. Set up github:
