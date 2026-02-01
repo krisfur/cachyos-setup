@@ -57,3 +57,23 @@
 .notification-content .body {
     color: #d8dee9; /* Body in Nord Light Grey */
 }
+
+.notification-content {
+    background: transparent;
+    padding: 5px;
+    margin: 0;
+    display: flex;       /* This is the magic line */
+    flex-direction: row; /* Puts icon and text in a line */
+}
+
+/* This targets the icon specifically */
+.notification-content > image {
+    margin-right: 15px;
+    border-radius: 8px;
+}
+
+/* This makes sure the text container takes up the rest of the space */
+.notification-text {
+    margin: 0;
+    padding: 0;
+}
