@@ -1,6 +1,12 @@
 # CachyOS Setup
 
+### KDE:
 ![screenshot](./screenshot.png)
+
+### Hyprland:
+![hyprshot](./hyprland/screenshot.png)
+
+> For `hyprland` instruction see [/hyprland](./hyprland/)
 
 ## Core things:
 
