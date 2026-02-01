@@ -4,6 +4,8 @@ Setting up a hyprland clean install of CachyOS for actual use.
 
 > In the installer select limine+hyprland and make sure to use the wifi network you will continue the rest of the setup on.
 
+![screenshot](./screenshot.png)
+
 ## Install core programs
 
 ```bash
