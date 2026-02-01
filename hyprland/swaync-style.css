@@ -1,32 +1,35 @@
-@define-color background rgba(46, 52, 64, 0.9); /* Nord Polar Night */
-@define-color border #81a1c1;                 /* Nord Frost Blue */
-@define-color critical #bf616a;               /* Nord Red */
+/* FORCE NORD COLORS */
+* {
+    font-family: "JetBrainsMono Nerd Font";
+}
 
 .notification-row {
     outline: none;
-    margin: 10px;
-    padding: 0;
+}
+
+.notification-row:focus,
+.notification-row:hover {
+    background: rgba(67, 76, 94, 0.8); /* Nord Selection */
 }
 
 .notification {
-    background: @background;
-    border: 2px solid @border;
-    border-radius: 12px;
-    color: #d8dee9;
-    padding: 15px;
-}
-
-.notification-content {
-    background: transparent;
-}
-
-.close-button {
-    background: #4c566a;
-    color: #eceff4;
+    background: #2e3440; /* Nord Polar Night */
+    border: 2px solid #88c0d0; /* Nord Frost Blue */
     border-radius: 10px;
+    color: #d8dee9;
+    margin: 8px;
+    padding: 10px;
 }
 
-.widget-title {
+/* This is the slide-out panel itself */
+.control-center {
+    background: rgba(46, 52, 64, 0.95);
+    border-left: 2px solid #81a1c1;
+    color: #d8dee9;
+    padding: 10px;
+}
+
+.widget-title > label {
     color: #88c0d0;
-    font-size: 1.5rem;
+    font-size: 20px;
 }
