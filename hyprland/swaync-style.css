@@ -1,79 +1,54 @@
-/* FORCE NORD COLORS */
+/* All-around Nord Theme */
 * {
     font-family: "JetBrainsMono Nerd Font";
+    background-clip: border-box;
 }
 
 .notification-row {
     outline: none;
-}
-
-.notification-row:focus,
-.notification-row:hover {
-    background: rgba(67, 76, 94, 0.8); /* Nord Selection */
+    margin: 4px 8px;
 }
 
 .notification {
-    background: #2e3440; /* Nord Polar Night */
-    border: 1px solid #88c0d0; /* Nord Frost Blue */
+    background: #2e3440;
+    border: 1px solid #88c0d0;
     border-radius: 8px;
     color: #d8dee9;
-    margin: 8px;
-    padding: 10px;
+    padding: 12px;
 }
 
-/* This is the slide-out panel itself */
-.control-center {
-    background: rgba(46, 52, 64, 0.95);
-    border-left: 1px solid #81a1c1;
-    color: #d8dee9;
-    padding: 10px;
-}
-
-.widget-title > label {
-    color: #88c0d0;
-    font-size: 20px;
-}
-
-/* Critical (Red) Notifications */
+/* Critical notifications */
 .notification.critical {
-    border: 1px solid #bf616a; /* Nord Red Border */
-    background: rgba(191, 97, 106, 0.1); /* Subtle Red Tint */
+    border: 1px solid #bf616a;
 }
 
-.notification.critical .notification-content .summary {
-    color: #bf616a; /* Critical Title in Red */
-    font-weight: bold;
-}
-
-.notification.critical .notification-content .body {
-    color: #eceff4; /* Keep body readable but bright */
-}
-
-/* Standard (Non-critical) Text color - Nord Snow Storm */
-.notification-content .summary {
-    color: #88c0d0; /* Titles in Frost Blue */
-}
-
-.notification-content .body {
-    color: #d8dee9; /* Body in Nord Light Grey */
-}
-
-.notification-content {
-    background: transparent;
-    padding: 5px;
-    margin: 0;
-    display: flex;       /* This is the magic line */
-    flex-direction: row; /* Puts icon and text in a line */
-}
-
-/* This targets the icon specifically */
-.notification-content > image {
+/* THE ICON FIX: GTK doesn't use flex, it uses margin/float-like behavior */
+.notification-content image {
     margin-right: 15px;
     border-radius: 8px;
 }
 
-/* This makes sure the text container takes up the rest of the space */
-.notification-text {
-    margin: 0;
-    padding: 0;
+.notification-content .summary {
+    color: #88c0d0;
+    font-weight: bold;
+    font-size: 16px;
 }
+
+.notification-content .body {
+    color: #d8dee9;
+    font-size: 14px;
+}
+
+/* The Control Center Panel */
+.control-center {
+    background: #2e3440;
+    border: 1px solid #4c566a;
+    border-radius: 8px;
+}
+
+.widget-title > label {
+    color: #81a1c1;
+    font-size: 1.2rem;
+    margin: 10px;
+}
+
