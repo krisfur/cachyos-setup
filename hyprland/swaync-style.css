@@ -14,8 +14,8 @@
 
 .notification {
     background: #2e3440; /* Nord Polar Night */
-    border: 2px solid #88c0d0; /* Nord Frost Blue */
-    border-radius: 10px;
+    border: 1px solid #88c0d0; /* Nord Frost Blue */
+    border-radius: 8px;
     color: #d8dee9;
     margin: 8px;
     padding: 10px;
@@ -24,7 +24,7 @@
 /* This is the slide-out panel itself */
 .control-center {
     background: rgba(46, 52, 64, 0.95);
-    border-left: 2px solid #81a1c1;
+    border-left: 1px solid #81a1c1;
     color: #d8dee9;
     padding: 10px;
 }
@@ -36,7 +36,7 @@
 
 /* Critical (Red) Notifications */
 .notification.critical {
-    border: 2px solid #bf616a; /* Nord Red Border */
+    border: 1px solid #bf616a; /* Nord Red Border */
     background: rgba(191, 97, 106, 0.1); /* Subtle Red Tint */
 }
 
