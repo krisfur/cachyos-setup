@@ -12,7 +12,8 @@ window#waybar {
 #cpu, 
 #memory, 
 #battery, 
-#window, 
+#window,
+#custom-notification,
 #tray {
     background: #3b4252;
     color: #eceff4;
