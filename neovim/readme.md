@@ -22,7 +22,7 @@ sudo pacman -S xclip
 ### macOS
 
 ```bash
-brew install neovim node tree-sitter
+brew install neovim node tree-sitter ripgrep
 ```
 
 Clipboard works out of the box (uses pbcopy/pbpaste).
