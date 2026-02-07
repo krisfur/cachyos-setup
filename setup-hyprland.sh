@@ -40,7 +40,7 @@ sudo cp -r hyprland/sddm/ /usr/share/sddm/themes/nordic-mountains/
 echo -e "[Theme]\nCurrent=nordic-mountains" | sudo tee /etc/sddm.conf
 
 echo "Copying configs..."
-cp wallpaper.png ~/.config/hypr/
+cp hyperland/wallpaper.png ~/.config/hypr/
 cp hyprland/hyprland.conf ~/.config/hypr/
 mkdir -p ~/.config/fuzzel
 cp hyprland/fuzzel.ini ~/.config/fuzzel/
