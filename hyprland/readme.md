@@ -16,7 +16,7 @@ fuzzel nwg-look qt6-wayland helium-browser-bin \
 neovim github-cli nordic-theme papirus-icon-theme \
 nodejs npm tree-sitter-cli cmake go zig uv typst \
 brightnessctl ttf-jetbrains-mono-nerd imv mpv \
-audacious gimp viu wl-clipboard
+audacious gimp viu wl-clipboard opencode-bin
 ```
 
 and add user to input group for waybar:
