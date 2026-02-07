@@ -1,10 +1,10 @@
 #!/bin/bash
 set -euo pipefail
 
-cd "$(dirname "$0")/.."
+cd "$(dirname "$0")"
 
 echo "Installing core programs..."
-paru -S --needed waybar swww ghostty thunar \
+paru -S --needed --noconfirm waybar swww ghostty thunar \
     swaync hyprpolkitagent hyprlock \
     bluetuith-bin gazelle-tui hyprshot \
     fuzzel qt6-wayland helium-browser-bin \
