@@ -7,7 +7,7 @@ echo "Installing core programs..."
 paru -S --needed --noconfirm waybar swww ghostty thunar \
     swaync hyprpolkitagent hyprlock \
     bluetuith-bin gazelle-tui hyprshot \
-    fuzzel qt6-wayland helium-browser-bin \
+    fuzzel nwg-look qt6-wayland helium-browser-bin \
     neovim github-cli nordic-theme papirus-icon-theme \
     nodejs npm tree-sitter-cli cmake go zig uv typst \
     brightnessctl ttf-jetbrains-mono-nerd imv mpv \
