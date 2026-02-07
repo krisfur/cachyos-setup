@@ -65,8 +65,7 @@ SDDM theme:
 
 ```bash
 sudo cp -r sddm/ /usr/share/sddm/themes/nordic-mountains/
-sudo mkdir -p /etc/sddm.conf.d
-echo -e "[Theme]\nCurrent=nordic-mountains" | sudo tee /etc/sddm.conf.d/theme.conf
+echo -e "[Theme]\nCurrent=nordic-mountains" | sudo tee /etc/sddm.conf
 ```
 
 ## Remove bloat:
