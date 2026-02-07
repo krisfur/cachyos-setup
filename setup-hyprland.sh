@@ -64,3 +64,7 @@ echo "Removing bloat..."
 paru -R --noconfirm alacritty firefox dolphin kitty meld 2>/dev/null || true
 
 echo "Setup complete! Log out and back in for all changes to take effect."
+echo ""
+echo "NOTE: For high-DPI displays (3K+, 4K+), edit ~/.config/hypr/hyprland.conf"
+echo "and adjust the monitor scale factor (e.g., 1.5 or 2.0). See the commented"
+echo "example in the MONITORS section of the config."
