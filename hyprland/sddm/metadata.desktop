@@ -1,0 +1,13 @@
+[SddmGreeterTheme]
+Name=Nordic Mountains
+Description=Dark Nordic SDDM theme with blurred login form
+Author=kfurman
+License=GPL-3.0-or-later
+Type=sddm-theme
+Version=1.0
+ConfigFile=theme.conf
+MainScript=Main.qml
+TranslationsDirectory=translations
+Theme-Id=nordic-mountains
+Theme-API=2.0
+QtVersion=6

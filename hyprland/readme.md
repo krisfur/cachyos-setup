@@ -64,10 +64,10 @@ fastfetch --logo-recache
 SDDM theme:
 
 ```bash
-bash -c "$(curl -fsSL https://raw.githubusercontent.com/keyitdev/sddm-astronaut-theme/master/setup.sh)"
+sudo cp -r sddm/ /usr/share/sddm/themes/nodric-mountains/
+sudo mkdir -p /etc/sddm.conf.d
+echo -e "[Theme]\nCurrent=nordic-mountains" | sudo tee /etc/sddm.conf.d/theme.conf
 ```
-
-and select `purple leaves`.
 
 ## Remove bloat:
 
