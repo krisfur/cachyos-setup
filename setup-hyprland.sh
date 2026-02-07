@@ -39,9 +39,6 @@ echo "Setting up SDDM theme..."
 sudo cp -r hyprland/sddm/ /usr/share/sddm/themes/nordic-mountains/
 echo -e "[Theme]\nCurrent=nordic-mountains" | sudo tee /etc/sddm.conf
 
-echo "Removing bloat..."
-paru -R --noconfirm alacritty firefox dolphin kitty meld 2>/dev/null || true
-
 echo "Copying configs..."
 cp wallpaper.png ~/.config/hypr/
 cp hyprland/hyprland.conf ~/.config/hypr/
@@ -62,5 +59,8 @@ echo "Configuring git..."
 git config --global user.email "k_furman@outlook.com"
 git config --global user.name "Krzysztof Furman"
 git config --global init.defaultBranch main
+
+echo "Removing bloat..."
+paru -R --noconfirm alacritty firefox dolphin kitty meld 2>/dev/null || true
 
 echo "Setup complete! Log out and back in for all changes to take effect."
