@@ -11,7 +11,7 @@ paru -S --needed waybar swww ghostty thunar \
     neovim github-cli nordic-theme papirus-icon-theme \
     nodejs npm tree-sitter-cli cmake go zig uv typst \
     brightnessctl ttf-jetbrains-mono-nerd imv mpv \
-    audacious gimp viu wl-clipboard
+    audacious gimp viu wl-clipboard opencode-bin
 
 echo "Adding user to input group..."
 sudo usermod -aG input "$USER"
