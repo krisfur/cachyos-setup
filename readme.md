@@ -3,8 +3,9 @@
 ### Hyprland:
 ![hyprshot](./hyprland/screenshot.png)
 
+> For `hyprland` instructions see [/hyprland](./hyprland/)
+
 ### KDE:
 ![screenshot](./kde/screenshot.png)
 
-> For `hyprland` instruction see [/hyprland](./hyprland/)
-> For `KDE` instruction see [/kde](./kde/)
+> For `KDE` instructions see [/kde](./kde/)
