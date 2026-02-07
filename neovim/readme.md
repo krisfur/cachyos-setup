@@ -7,7 +7,7 @@
 ### Arch Linux / CachyOS
 
 ```bash
-sudo pacman -S neovim nodejs npm tree-sitter-cli
+sudo pacman -S --needed neovim nodejs npm tree-sitter-cli
 ```
 
 Clipboard (pick one):
@@ -26,21 +26,6 @@ brew install neovim node tree-sitter ripgrep
 ```
 
 Clipboard works out of the box (uses pbcopy/pbpaste).
-
-### Void Linux
-
-```bash
-sudo xbps-install neovim nodejs tree-sitter
-```
-
-Clipboard (pick one):
-```bash
-# Wayland
-sudo xbps-install wl-clipboard
-
-# X11
-sudo xbps-install xclip
-```
 
 ## Install the config
 

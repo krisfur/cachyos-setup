@@ -9,14 +9,14 @@ Setting up a hyprland clean install of CachyOS for actual use.
 ## Install core programs
 
 ```bash
-paru -S waybar swww ghostty thunar \
+paru -S --needed waybar swww ghostty thunar \
 swaync hyprpolkitagent hyprlock \
 bluetuith-bin gazelle-tui hyprshot \
 fuzzel nwg-look qt6-wayland helium-browser-bin \
 neovim github-cli nordic-theme papirus-icon-theme \
 nodejs npm tree-sitter-cli cmake go zig uv typst \
 brightnessctl ttf-jetbrains-mono-nerd imv mpv \
-audacious gimp viu
+audacious gimp viu wl-clipboard
 ```
 
 and add user to input group for waybar:
