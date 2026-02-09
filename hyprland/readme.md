@@ -68,6 +68,13 @@ sudo cp -r sddm/ /usr/share/sddm/themes/nordic-mountains/
 echo -e "[Theme]\nCurrent=nordic-mountains" | sudo tee /etc/sddm.conf
 ```
 
+Add `ufw` rules for localsend:
+
+```bash
+sudo ufw allow 53317/tcp
+sudo ufw allow 53317/udp
+```
+
 ## Remove bloat:
 
 ```bash
