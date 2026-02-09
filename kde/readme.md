@@ -199,3 +199,12 @@ sudo vim /etc/pam.d/sddm
 ```
 
 warning: sddm can sometimes bug out and always require a fingerprint and not the password, looking into that.
+
+4. Localsend not working
+
+need to add a rule:
+
+```bash
+sudo ufw allow 53317/tcp
+sudo ufw allow 53317/udp
+```
