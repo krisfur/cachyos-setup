@@ -5,7 +5,7 @@ cd "$(dirname "$0")"
 
 echo "Installing core programs..."
 paru -S --needed --noconfirm waybar swww ghostty thunar \
-    swaync hyprpolkitagent hyprlock \
+    swaync hyprpolkitagent hyprlock xarchiver \
     bluetuith-bin gazelle-tui hyprshot \
     fuzzel nwg-look qt6-wayland helium-browser-bin \
     neovim github-cli nordic-theme papirus-icon-theme \

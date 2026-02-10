@@ -10,7 +10,7 @@ Setting up a hyprland clean install of CachyOS for actual use.
 
 ```bash
 paru -S --needed waybar swww ghostty thunar \
-swaync hyprpolkitagent hyprlock \
+swaync hyprpolkitagent hyprlock xarchiver \
 bluetuith-bin gazelle-tui hyprshot \
 fuzzel nwg-look qt6-wayland helium-browser-bin \
 neovim github-cli nordic-theme papirus-icon-theme \
