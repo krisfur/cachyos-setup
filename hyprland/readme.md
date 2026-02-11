@@ -11,7 +11,7 @@ Setting up a hyprland clean install of CachyOS for actual use.
 ```bash
 paru -S --needed waybar swww ghostty thunar \
 swaync hyprpolkitagent hyprlock xarchiver \
-bluetuith-bin gazelle-tui hyprshot \
+bluetuith-bin gazelle-tui hyprshot ninja \
 fuzzel nwg-look qt6-wayland helium-browser-bin \
 neovim github-cli nordic-theme papirus-icon-theme \
 nodejs npm tree-sitter-cli cmake go zig uv typst \
