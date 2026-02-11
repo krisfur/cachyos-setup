@@ -32,9 +32,9 @@ echo "Installing Bun..."
 curl -fsSL https://bun.sh/install | bash
 
 echo "Installing Paclook..."
-curl -fL https://github.com/krisfur/paclook/releases/download/v0.9.2/paclook-v0.9.2-linux-x86_64.tar.gz | tar -xz
-sudo install -m 755 paclook-v0.9.2-linux-x86_64/paclook /usr/local/bin/paclook
-rm -r paclook-v0.9.2-linux-x86_64/
+curl -fL https://github.com/krisfur/paclook/releases/download/v1.0.0/paclook-v1.0.0-linux-x86_64.tar.gz | tar -xz
+sudo install -m 755 paclook-v1.0.0-linux-x86_64/paclook /usr/local/bin/paclook
+rm -r paclook-v1.0.0-linux-x86_64/
 
 echo "Setting up Fastfetch..."
 fastfetch --gen-config
