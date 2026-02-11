@@ -11,10 +11,16 @@ paru -S --needed --noconfirm waybar swww ghostty thunar \
     neovim github-cli nordic-theme papirus-icon-theme \
     nodejs npm tree-sitter-cli cmake go zig uv typst \
     brightnessctl ttf-jetbrains-mono-nerd imv mpv \
-    gimp viu wl-clipboard opencode-bin localsend
+    gimp viu wl-clipboard opencode-bin localsend \
+    clang docker
 
 echo "Adding user to input group..."
 sudo usermod -aG input "$USER"
+
+echo "Setting up docker..."
+sudo systemctl enable --now docker
+sudo usermod -aG docker $USER
+newgrp docker
 
 echo "Installing Claude Code..."
 curl -fsSL https://claude.ai/install.sh | bash

@@ -16,13 +16,22 @@ fuzzel nwg-look qt6-wayland helium-browser-bin \
 neovim github-cli nordic-theme papirus-icon-theme \
 nodejs npm tree-sitter-cli cmake go zig uv typst \
 brightnessctl ttf-jetbrains-mono-nerd imv mpv \
-gimp viu wl-clipboard opencode-bin localsend
+gimp viu wl-clipboard opencode-bin localsend \
+clang docker
 ```
 
-and add user to input group for waybar:
+add user to input group for waybar:
 
 ```bash
 sudo usermod -aG input $USER
+```
+
+and set up docker:
+
+```bash
+sudo systemctl enable --now docker
+sudo usermod -aG docker $USER
+newgrp docker
 ```
 
 `Claude Code`:
