@@ -567,6 +567,33 @@ require("lazy").setup({
 				end,
 			})
 
+			-- C++20 module keyword highlights (deferred until cpp is first opened)
+			vim.api.nvim_create_autocmd("FileType", {
+				pattern = "cpp",
+				once = true,
+				callback = function()
+					local files = vim.treesitter.query.get_files("cpp", "highlights")
+					local parts = {}
+					for _, file in ipairs(files) do
+						local fh = io.open(file, "r")
+						if fh then
+							local content = fh:read("*a")
+							fh:close()
+							content = content:gsub(";%s*extends[^\n]*\n?", "")
+							content = content:gsub(";%s*inherits[^\n]*\n?", "")
+							table.insert(parts, content)
+						end
+					end
+					table.insert(parts, [[
+(module_declaration "module" @keyword.import)
+(module_declaration "export" @keyword.import)
+(import_declaration "import" @keyword.import)
+(export_declaration "export" @keyword.import)
+]])
+					pcall(vim.treesitter.query.set, "cpp", "highlights", table.concat(parts, "\n"))
+				end,
+			})
+
 			-- Enable treesitter highlighting globally
 			vim.api.nvim_create_autocmd("FileType", {
 				callback = function(args)
