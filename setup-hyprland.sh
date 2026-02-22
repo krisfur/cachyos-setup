@@ -22,19 +22,15 @@ sudo systemctl enable --now docker
 sudo usermod -aG docker $USER
 newgrp docker
 
-echo "Installing Claude Code..."
-curl -fsSL https://claude.ai/install.sh | bash
-
 echo "Installing Rust..."
 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y
+source "$HOME/.cargo/env"
+
+echo "Installing fex..."
+cargo install fex
 
 echo "Installing Bun..."
 curl -fsSL https://bun.sh/install | bash
-
-echo "Installing Paclook..."
-curl -fL https://github.com/krisfur/paclook/releases/download/v1.0.0/paclook-v1.0.0-linux-x86_64.tar.gz | tar -xz
-sudo install -m 755 paclook-v1.0.0-linux-x86_64/paclook /usr/local/bin/paclook
-rm -r paclook-v1.0.0-linux-x86_64/
 
 echo "Setting up Fastfetch..."
 fastfetch --gen-config
