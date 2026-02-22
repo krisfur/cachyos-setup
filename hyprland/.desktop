@@ -1,5 +1,5 @@
 [Desktop Entry]
 Name=fex
-Exec=ghostty -e fex
+Exec=fex
 Type=Application
-Terminal=false
+Terminal=true
