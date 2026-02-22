@@ -56,6 +56,8 @@ mkdir -p ~/.config/swaync
 cp hyprland/swaync-style.css ~/.config/swaync/style.css
 mkdir -p ~/.config/gazelle
 cp hyprland/gazelle-config.json ~/.config/gazelle/config.json
+mkdir -p ~/.local/share/applications
+cp hyprland/.desktop ~/.local/share/applications/
 
 echo "Adding ufw rules for localsend..."
 sudo ufw allow 53317/tcp

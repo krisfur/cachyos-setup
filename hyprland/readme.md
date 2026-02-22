@@ -109,6 +109,9 @@ mkdir -p ~/.config/swaync
 cp swaync-style.css ~/.config/swaync/style.css
 #gazelle
 cp gazelle-config.json ~/.config/gazelle/style.css
+#fex
+mkdir -p ~/.local/share/applications
+cp .desktop ~/.local/share/applications/
 ```
 
 git config:
