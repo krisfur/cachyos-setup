@@ -12,7 +12,7 @@ paru -S --needed --noconfirm waybar swww ghostty thunar \
     nodejs npm tree-sitter-cli cmake go zig uv typst \
     brightnessctl ttf-jetbrains-mono-nerd imv mpv \
     gimp viu wl-clipboard opencode-bin localsend \
-    clang docker
+    clang docker gvfs gvfs-mtp libmtp android-udev
 
 echo "Adding user to input group..."
 sudo usermod -aG input "$USER"
