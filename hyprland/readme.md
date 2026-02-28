@@ -136,4 +136,10 @@ audio:
 
 ```bash
 sudo pacman -S sof-firmware alsa-ucm-conf wireplumber
+amixer -c 2 cset numid=24 90%
+amixer -c 2 cset numid=13 90%
+amixer -c 2 cset numid=6 80%
+amixer -c 2 cset numid=12 80%
+amixer -c 2 cset numid=15 on
+amixer -c 2 cset numid=14 on
 ```
