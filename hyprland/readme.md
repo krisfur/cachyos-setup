@@ -143,3 +143,7 @@ amixer -c 2 cset numid=12 80%
 amixer -c 2 cset numid=15 on
 amixer -c 2 cset numid=14 on
 ```
+
+Remap M4 to PrtSc:
+
+in `hyprland.conf` replace `Print` with `XF86Launch1`.
