@@ -131,3 +131,9 @@ keyboard:
 asusctl aura effect static --colour 5E81AC
 asusctl slash --mode Static
 ```
+
+audio:
+
+```bash
+sudo pacman -S sof-firmware alsa-ucm-conf wireplumber
+```
