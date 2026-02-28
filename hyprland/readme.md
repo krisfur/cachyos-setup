@@ -123,3 +123,11 @@ git config --global user.name "Krzysztof Furman"
 git config --global init.defaultBranch main
 ```
 
+# Zephyrus G14 specific
+
+keyboard:
+
+```bash
+asusctl aura effect static --colour 5E81AC
+asusctl slash --mode Static
+```
