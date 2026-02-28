@@ -18,11 +18,6 @@ paru -S --needed --noconfirm waybar swww ghostty thunar \
 echo "Adding user to input group..."
 sudo usermod -aG input "$USER"
 
-echo "Setting up docker..."
-sudo systemctl enable --now docker
-sudo usermod -aG docker $USER
-newgrp docker
-
 echo "Installing Rust..."
 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y
 source "$HOME/.cargo/env"
@@ -77,3 +72,8 @@ echo ""
 echo "NOTE: For high-DPI displays (3K+, 4K+), edit ~/.config/hypr/hyprland.conf"
 echo "and adjust the monitor scale factor (e.g., 1.5 or 2.0). See the commented"
 echo "example in the MONITORS section of the config."
+
+echo "Creating docker group..."
+sudo systemctl enable --now docker
+sudo usermod -aG docker $USER
+newgrp docker
