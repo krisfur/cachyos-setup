@@ -89,7 +89,7 @@
         "return-type": "json",
         "exec": "bash -lc 'profile=$(powerprofilesctl get 2>/dev/null || echo balanced); case \"$profile\" in power-saver) printf \"{\\\"text\\\":\\\"🌿\\\",\\\"class\\\":\\\"power-saver\\\",\\\"tooltip\\\":\\\"Power profile: power-saver\\\"}\\n\" ;; balanced) printf \"{\\\"text\\\":\\\"☯︎\\\",\\\"class\\\":\\\"balanced\\\",\\\"tooltip\\\":\\\"Power profile: balanced\\\"}\\n\" ;; performance) printf \"{\\\"text\\\":\\\"🚀\\\",\\\"class\\\":\\\"performance\\\",\\\"tooltip\\\":\\\"Power profile: performance\\\"}\\n\" ;; *) printf \"{\\\"text\\\":\\\"⚡\\\",\\\"class\\\":\\\"unknown\\\",\\\"tooltip\\\":\\\"Power profile: %s\\\"}\\n\" \"$profile\" ;; esac'",
         "on-click": "bash -lc 'current=$(powerprofilesctl get 2>/dev/null || echo balanced); case \"$current\" in power-saver) next=balanced ;; balanced) next=performance ;; performance) next=power-saver ;; *) next=balanced ;; esac; powerprofilesctl set \"$next\"'",
-        "on-click-right": "bash -lc 'choice=$(printf \"🚀 performance\\n☯︎ \u2009\u200A\u200A\u200Abalanced\\n🌿 power-saver\" | fuzzel --dmenu --hide-prompt --lines 3); profile=${choice##* }; [ -n \"$profile\" ] && powerprofilesctl set \"$profile\"'"
+        "on-click-right": "bash -lc 'choice=$(printf \"🚀 performance\\n☯︎ \u2009\u200A\u200A\u200Abalanced\\n🌿 power-saver\" | fuzzel --dmenu --hide-prompt --lines 3); case \"$choice\" in *performance) powerprofilesctl set performance ;; *balanced) powerprofilesctl set balanced ;; *power-saver) powerprofilesctl set power-saver ;; *) : ;; esac'"
     },
 
     "battery": {
