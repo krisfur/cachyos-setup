@@ -1,12 +1,12 @@
 {
     "layer": "top",
     "position": "top",
-    "height": 34,
+    "height": 36,
     "spacing": 4,
 
     "modules-left": ["hyprland/workspaces", "hyprland/window"],
     "modules-center": ["clock"],
-    "modules-right": ["tray", "network", "bluetooth", "group/hardware", "pulseaudio", "battery", "custom/notification"],
+    "modules-right": ["tray", "network", "bluetooth", "group/hardware", "pulseaudio", "battery", "custom/notification", "custom/power"],
 
     "hyprland/workspaces": {
         "format": "{icon}",
@@ -113,6 +113,13 @@
         "on-click": "swaync-client -t -sw",
         "on-click-right": "swaync-client -d -sw",
         "escape": true
+    },
+
+    "custom/power": {
+        "tooltip": true,
+        "format": "⏻",
+        "tooltip-format": "Power menu",
+        "on-click": "bash -lc 'choice=$(printf \"Shutdown\\nReboot\\nCancel\" | fuzzel --dmenu --hide-prompt --lines 3); case \"$choice\" in Shutdown) systemctl poweroff ;; Reboot) systemctl reboot ;; *) : ;; esac'"
     },
 
     "tray": {
