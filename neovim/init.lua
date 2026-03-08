@@ -551,7 +551,8 @@ require("lazy").setup({
 				"vim",
 				"vimdoc",
 				"zig",
-				"odin", -- slow to compile
+				"odin",
+				"swift",
 			}
 
 			-- Install missing parsers
@@ -584,12 +585,15 @@ require("lazy").setup({
 							table.insert(parts, content)
 						end
 					end
-					table.insert(parts, [[
+					table.insert(
+						parts,
+						[[
 (module_declaration "module" @keyword.import)
 (module_declaration "export" @keyword.import)
 (import_declaration "import" @keyword.import)
 (export_declaration "export" @keyword.import)
-]])
+]]
+					)
 					pcall(vim.treesitter.query.set, "cpp", "highlights", table.concat(parts, "\n"))
 				end,
 			})
