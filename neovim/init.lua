@@ -1,6 +1,7 @@
 vim.g.mapleader = " "
 vim.g.maplocalleader = " "
 vim.g.have_nerd_font = false
+vim.g.loaded_python3_provider = 0
 
 -- [[ Options ]]
 vim.o.number = true
