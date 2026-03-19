@@ -315,6 +315,7 @@ require("lazy").setup({
 			-- Add LSP servers here
 			local servers = {
 				clangd = {},
+				eslint = {},
 				gopls = {},
 				pyright = {},
 				ts_ls = {},
@@ -335,6 +336,7 @@ require("lazy").setup({
 			-- LSPs to install via Mason
 			local ensure_installed = vim.tbl_keys(servers or {})
 			vim.list_extend(ensure_installed, {
+				"prettier",
 				"stylua",
 			})
 			require("mason-tool-installer").setup({ ensure_installed = ensure_installed })
@@ -423,8 +425,13 @@ require("lazy").setup({
 				end
 			end,
 			formatters_by_ft = {
+				javascript = { "prettier" },
+				javascriptreact = { "prettier" },
+				json = { "prettier" },
 				lua = { "stylua" },
 				python = { "ruff_format" },
+				typescript = { "prettier" },
+				typescriptreact = { "prettier" },
 				-- Add formatters here
 			},
 		},
