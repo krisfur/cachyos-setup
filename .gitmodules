@@ -1,3 +1,4 @@
 [submodule "neovim"]
 	path = neovim
 	url = https://github.com/krisfur/neovim-config.git
+	branch = main
