@@ -3,6 +3,9 @@ set -euo pipefail
 
 cd "$(dirname "$0")"
 
+echo "Fetching latest submodules..."
+git submodule update --init --remote --recursive
+
 echo "Installing core programs..."
 paru -S --needed --noconfirm waybar swww ghostty thunar \
     swaync hyprpolkitagent hyprlock xarchiver \
@@ -13,7 +16,7 @@ paru -S --needed --noconfirm waybar swww ghostty thunar \
     brightnessctl ttf-jetbrains-mono-nerd imv mpv \
     gimp viu wl-clipboard opencode-bin localsend \
     clang docker gvfs gvfs-mtp libmtp android-udev \
-    odin
+    odin fastfetch
 
 echo "Adding user to input group..."
 sudo usermod -aG input "$USER"
@@ -38,6 +41,7 @@ sudo cp -r hyprland/sddm/ /usr/share/sddm/themes/nordic-mountains/
 echo -e "[Theme]\nCurrent=nordic-mountains" | sudo tee /etc/sddm.conf
 
 echo "Copying configs..."
+mkdir -p ~/.config/hypr
 cp hyprland/wallpaper.png ~/.config/hypr/
 cp hyprland/hyprland.conf ~/.config/hypr/
 mkdir -p ~/.config/fuzzel

@@ -1,5 +1,11 @@
 # CachyOS Setup
 
+To grab the latest configs run:
+
+```bash
+git submodule update --init --remote --recursive
+```
+
 ### Hyprland:
 ![hyprshot](./hyprland/screenshot.png)
 
