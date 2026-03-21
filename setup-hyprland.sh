@@ -31,6 +31,17 @@ cargo install fex
 echo "Installing Bun..."
 curl -fsSL https://bun.sh/install | bash
 
+echo "Creating config directories..."
+mkdir -p \
+    "$HOME/.config/hypr" \
+    "$HOME/.config/fuzzel" \
+    "$HOME/.config/waybar" \
+    "$HOME/.config/nvim" \
+    "$HOME/.config/swaync" \
+    "$HOME/.config/gazelle" \
+    "$HOME/.config/fastfetch" \
+    "$HOME/.local/share/applications"
+
 echo "Setting up Fastfetch..."
 fastfetch --gen-config
 cp fastfetch/* ~/.config/fastfetch/
@@ -41,22 +52,15 @@ sudo cp -r hyprland/sddm/ /usr/share/sddm/themes/nordic-mountains/
 echo -e "[Theme]\nCurrent=nordic-mountains" | sudo tee /etc/sddm.conf
 
 echo "Copying configs..."
-mkdir -p ~/.config/hypr
 cp hyprland/wallpaper.png ~/.config/hypr/
 cp hyprland/hyprland.conf ~/.config/hypr/
-mkdir -p ~/.config/fuzzel
 cp hyprland/fuzzel.ini ~/.config/fuzzel/
-mkdir -p ~/.config/waybar
 cp hyprland/waybar-style.css ~/.config/waybar/style.css
 cp hyprland/waybar-config ~/.config/waybar/config
-mkdir -p ~/.config/nvim
 cp neovim/init.lua ~/.config/nvim/
 cp hyprland/hyprlock.conf ~/.config/hypr/
-mkdir -p ~/.config/swaync
 cp hyprland/swaync-style.css ~/.config/swaync/style.css
-mkdir -p ~/.config/gazelle
 cp hyprland/gazelle-config.json ~/.config/gazelle/config.json
-mkdir -p ~/.local/share/applications
 cp hyprland/.desktop ~/.local/share/applications/
 
 echo "Adding ufw rules for localsend..."
@@ -71,13 +75,12 @@ git config --global init.defaultBranch main
 echo "Removing bloat..."
 paru -R --noconfirm alacritty firefox dolphin kitty meld 2>/dev/null || true
 
+echo "Creating docker group..."
+sudo systemctl enable --now docker
+sudo usermod -aG docker $USER
+
 echo "Setup complete! Log out and back in for all changes to take effect."
 echo ""
 echo "NOTE: For high-DPI displays (3K+, 4K+), edit ~/.config/hypr/hyprland.conf"
 echo "and adjust the monitor scale factor (e.g., 1.5 or 2.0). See the commented"
 echo "example in the MONITORS section of the config."
-
-echo "Creating docker group..."
-sudo systemctl enable --now docker
-sudo usermod -aG docker $USER
-newgrp docker
