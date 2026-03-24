@@ -18,7 +18,7 @@ nodejs npm tree-sitter-cli cmake go zig uv typst \
 brightnessctl ttf-jetbrains-mono-nerd imv mpv \
 gimp viu wl-clipboard opencode-bin localsend \
 clang docker gvfs gvfs-mtp libmtp android-udev \
-odin
+odin fastfetch swift-bin
 ```
 
 add user to input group for waybar:

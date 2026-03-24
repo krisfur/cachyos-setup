@@ -16,7 +16,7 @@ paru -S --needed --noconfirm waybar swww ghostty thunar \
     brightnessctl ttf-jetbrains-mono-nerd imv mpv \
     gimp viu wl-clipboard opencode-bin localsend \
     clang docker gvfs gvfs-mtp libmtp android-udev \
-    odin fastfetch
+    odin fastfetch swift-bin
 
 echo "Adding user to input group..."
 sudo usermod -aG input "$USER"
