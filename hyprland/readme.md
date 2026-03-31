@@ -9,7 +9,7 @@ Setting up a hyprland clean install of CachyOS for actual use.
 ## Install core programs
 
 ```bash
-paru -S --needed waybar swww ghostty thunar \
+paru -S --needed waybar awww ghostty thunar \
 swaync hyprpolkitagent hyprlock xarchiver \
 bluetuith-bin gazelle-tui hyprshot ninja \
 fuzzel nwg-look qt6-wayland helium-browser-bin \
