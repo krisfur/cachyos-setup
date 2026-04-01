@@ -125,7 +125,7 @@ git config --global init.defaultBranch main
 
 # Zephyrus G14 specific
 
-keyboard:
+- keyboard:
 
 ```bash
 paru -S asusctl
@@ -133,7 +133,7 @@ asusctl aura effect static --colour 5E81AC
 asusctl slash --mode Static
 ```
 
-audio option one:
+- audio option one:
 
 ```bash
 sudo pacman -S sof-firmware alsa-ucm-conf wireplumber
@@ -145,7 +145,7 @@ amixer -c 2 cset numid=15 on
 amixer -c 2 cset numid=14 on
 ```
 
-audio options two:
+- audio option two:
 
 ```bash
 sudo mkdir /etc/wireplumber/
@@ -186,6 +186,6 @@ amixer -c 2 set Master 100%
   sudo alsactl store
 ```
 
-Remap M4 to PrtSc:
+- Remap M4 to PrtSc:
 
 in `hyprland.conf` replace `Print` with `XF86Launch1`.
