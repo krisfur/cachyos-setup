@@ -128,11 +128,12 @@ git config --global init.defaultBranch main
 keyboard:
 
 ```bash
+paru -S asusctl
 asusctl aura effect static --colour 5E81AC
 asusctl slash --mode Static
 ```
 
-audio:
+audio option one:
 
 ```bash
 sudo pacman -S sof-firmware alsa-ucm-conf wireplumber
@@ -142,6 +143,47 @@ amixer -c 2 cset numid=6 80%
 amixer -c 2 cset numid=12 80%
 amixer -c 2 cset numid=15 on
 amixer -c 2 cset numid=14 on
+```
+
+audio options two:
+
+```bash
+sudo mkdir /etc/wireplumber/
+sudo mkdir /etc/wireplumber/wireplumber.conf.d/
+sudo nvim /etc/wireplumber/wireplumber.conf.d/51-g14-softmixer.conf
+```
+
+paste in:
+
+```ini
+monitor.alsa.rules = [
+  {
+    matches = [
+      {
+        device.name = "~alsa_card.*"
+      }
+    ]
+    actions = {
+      update-props = {
+        api.alsa.soft-mixer = true
+        api.alsa.ignore-dB = true
+      }
+    }
+  }
+]
+```
+
+then:
+
+```bash
+systemctl --user restart wireplumber pipewire pipewire-pulse
+amixer -c 2 set Master 100%
+  amixer -c 2 set Speaker 100%
+  amixer -c 2 set PCM 100%
+  amixer -c 2 set 'Bass Speaker' on
+  amixer -c 2 set 'AMP1 Speaker' 0dB
+  amixer -c 2 set 'AMP2 Speaker' 0dB
+  sudo alsactl store
 ```
 
 Remap M4 to PrtSc:
