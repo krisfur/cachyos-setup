@@ -71,12 +71,13 @@ cp hyprland/.desktop ~/.local/share/applications/
 
 echo "Configuring greetd..."
 sudo install -d -m 755 /etc/greetd
+sudo install -d -o greeter -g greeter -m 755 /var/cache/tuigreet
 printf '%s\n' \
     '[terminal]' \
     'vt = 1' \
     '' \
     '[default_session]' \
-    'command = "tuigreet --remember --cmd sway"' \
+    'command = "tuigreet --time --user-menu --remember --remember-session --remember-user-session --asterisks --cmd sway"' \
     'user = "greeter"' | sudo tee /etc/greetd/config.toml >/dev/null
 sudo systemctl enable greetd.service
 sudo systemctl set-default graphical.target
