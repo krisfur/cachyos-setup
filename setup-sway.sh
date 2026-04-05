@@ -49,7 +49,7 @@ mkdir -p \
     "$HOME/.local/share/applications"
 
 echo "Setting up Fastfetch..."
-fastfetch --gen-config
+fastfetch --gen-config-force
 cp fastfetch/* ~/.config/fastfetch/
 fastfetch --logo-recache
 
