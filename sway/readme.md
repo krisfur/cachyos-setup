@@ -62,3 +62,14 @@ For a 4K display where you want the game rendered at 1080p and presented fullscr
 ```bash
 gamescope -f -w 1920 -h 1080 -W 3840 -H 2160 -- %command%
 ```
+
+## Zephyrus G14
+
+For the ASUS-specific keyboard lighting and WirePlumber audio fix, run the shared hardware script from the repo root:
+
+```bash
+./setup-g14.sh
+```
+
+- Set `output * scale 1.6` in `~/.config/sway/config`.
+- Remap the G14 M4 macro button for screenshots by replacing `Print` with `XF86Launch1` in `sway/config`.
