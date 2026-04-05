@@ -48,7 +48,7 @@ bindsym $mod+Return exec $terminal
 bindsym $mod+w kill
 bindsym $mod+m exit
 bindsym $mod+e exec $fileManager
-bindsym $mod+Shift+space floating toggle
+bindsym $mod+t floating toggle
 bindsym $mod+space exec $menu
 bindsym $mod+f fullscreen toggle
 bindsym $mod+b exec $browser
