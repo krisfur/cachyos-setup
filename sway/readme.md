@@ -37,5 +37,6 @@ The script installs and enables `greetd` with `tuigreet`, so the machine should 
 - screenshots use `grim` + `slurp`
 - the polkit agent is `polkit-gnome`
 - login is handled by `greetd` + `tuigreet`
+- locking uses `swaylock-effects` with a blurred version of the wallpaper
 - portals use `xdg-desktop-portal-gtk` by default and `xdg-desktop-portal-wlr` for screenshots and screencasts
 - for high-DPI displays, edit `~/.config/sway/config` and adjust `output * scale`

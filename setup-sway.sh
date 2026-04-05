@@ -9,7 +9,7 @@ git submodule update --init --remote --recursive
 echo "Installing core programs..."
 paru -S --needed --noconfirm waybar sway ghostty thunar \
     greetd greetd-tuigreet \
-    swaync polkit-gnome swaylock swayidle swaybg \
+    swaync polkit-gnome swaylock-effects swayidle swaybg \
     xarchiver bluetuith-bin gazelle-tui grim slurp \
     dconf xdg-desktop-portal xdg-desktop-portal-gtk xdg-desktop-portal-wlr \
     ninja fuzzel nwg-look qt6-wayland helium-browser-bin \

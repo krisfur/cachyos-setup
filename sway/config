@@ -11,7 +11,7 @@ set $terminal ghostty
 set $fileManager thunar
 set $menu fuzzel
 set $browser helium-browser
-set $lockcmd swaylock -f -i ~/.config/sway/wallpaper.png --config ~/.config/swaylock/config
+set $lockcmd swaylock -f -i ~/.config/sway/wallpaper.png --effect-blur 7x5 --config ~/.config/swaylock/config
 
 font pango:JetBrainsMono Nerd Font 10
 floating_modifier $mod normal
@@ -23,7 +23,7 @@ exec waybar
 exec swaync
 exec /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
 exec swaybg -i ~/.config/sway/wallpaper.png -m fill
-exec swayidle -w timeout 300 'swaylock -f -i ~/.config/sway/wallpaper.png --config ~/.config/swaylock/config' timeout 600 'swaymsg "output * dpms off"' resume 'swaymsg "output * dpms on"' before-sleep 'swaylock -f -i ~/.config/sway/wallpaper.png --config ~/.config/swaylock/config'
+exec swayidle -w timeout 300 'swaylock -f -i ~/.config/sway/wallpaper.png --effect-blur 7x5 --config ~/.config/swaylock/config' timeout 600 'swaymsg "output * dpms off"' resume 'swaymsg "output * dpms on"' before-sleep 'swaylock -f -i ~/.config/sway/wallpaper.png --effect-blur 7x5 --config ~/.config/swaylock/config'
 
 input type:keyboard {
     xkb_layout gb
