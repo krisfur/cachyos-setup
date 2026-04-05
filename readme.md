@@ -11,6 +11,11 @@ git submodule update --init --remote --recursive
 
 > For `hyprland` instructions see [/hyprland](./hyprland/)
 
+### Sway
+![swayshot](./sway/screenshot-sway.png)
+
+> For `sway` instructions see [/sway](./sway/)
+
 ### KDE:
 ![screenshot](./kde/screenshot.png)
 

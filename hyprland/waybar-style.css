@@ -57,7 +57,8 @@ window#waybar {
     border: none;
 }
 
-#workspaces button.active {
+#workspaces button.active,
+#workspaces button.focused {
     background: #88c0d0;
     color: #2e3440;
     border-radius: 6px;
@@ -75,6 +76,13 @@ window#waybar {
 
 #network.disconnected {
     background-color: #d08770;
+}
+
+#custom-notification.dnd-none,
+#custom-notification.dnd-notification,
+#custom-notification.dnd-inhibited-none,
+#custom-notification.dnd-inhibited-notification {
+    color: #bf616a;
 }
 
 #battery.warning {

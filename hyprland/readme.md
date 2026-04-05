@@ -125,66 +125,13 @@ git config --global init.defaultBranch main
 
 # Zephyrus G14 specific
 
-- keyboard:
+Run the shared hardware script from the repo root:
 
 ```bash
-paru -S asusctl
-asusctl aura effect static --colour 5E81AC
-asusctl slash --mode Static
+./setup-g14.sh
 ```
 
-- audio option one:
-
-```bash
-sudo pacman -S sof-firmware alsa-ucm-conf wireplumber
-amixer -c 2 cset numid=24 90%
-amixer -c 2 cset numid=13 90%
-amixer -c 2 cset numid=6 80%
-amixer -c 2 cset numid=12 80%
-amixer -c 2 cset numid=15 on
-amixer -c 2 cset numid=14 on
-```
-
-- audio option two:
-
-```bash
-sudo mkdir /etc/wireplumber/
-sudo mkdir /etc/wireplumber/wireplumber.conf.d/
-sudo nvim /etc/wireplumber/wireplumber.conf.d/51-g14-softmixer.conf
-```
-
-paste in:
-
-```ini
-monitor.alsa.rules = [
-  {
-    matches = [
-      {
-        device.name = "~alsa_card.*"
-      }
-    ]
-    actions = {
-      update-props = {
-        api.alsa.soft-mixer = true
-        api.alsa.ignore-dB = true
-      }
-    }
-  }
-]
-```
-
-then:
-
-```bash
-systemctl --user restart wireplumber pipewire pipewire-pulse
-amixer -c 2 set Master 100%
-  amixer -c 2 set Speaker 100%
-  amixer -c 2 set PCM 100%
-  amixer -c 2 set 'Bass Speaker' on
-  amixer -c 2 set 'AMP1 Speaker' 0dB
-  amixer -c 2 set 'AMP2 Speaker' 0dB
-  sudo alsactl store
-```
+- Set the display scale to `1.6` in `hyprland.conf`.
 
 - Remap M4 to PrtSc:
 
