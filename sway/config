@@ -1,4 +1,6 @@
 # Output configuration
+include /etc/sway/config.d/*
+
 output * scale 1
 
 # For high-DPI displays (e.g., 3K), uncomment and adjust:
