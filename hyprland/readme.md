@@ -132,20 +132,7 @@ paru -S asusctl
 asusctl aura effect static --colour 5E81AC
 asusctl slash --mode Static
 ```
-
-- audio option one:
-
-```bash
-sudo pacman -S sof-firmware alsa-ucm-conf wireplumber
-amixer -c 2 cset numid=24 90%
-amixer -c 2 cset numid=13 90%
-amixer -c 2 cset numid=6 80%
-amixer -c 2 cset numid=12 80%
-amixer -c 2 cset numid=15 on
-amixer -c 2 cset numid=14 on
-```
-
-- audio option two:
+- audio fix:
 
 ```bash
 sudo mkdir /etc/wireplumber/
