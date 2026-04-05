@@ -21,6 +21,7 @@ The script installs and enables `greetd` with `tuigreet`, so the machine should 
 - `gtk-3.0-settings.ini`: GTK 3 theme settings
 - `gtk-4.0-settings.ini`: GTK 4 theme settings
 - `sway-portals.conf`: portal backend selection for Sway
+- `cycle-workspace.sh`: clamped workspace cycling helper for gestures
 
 ## Shared assets
 
@@ -39,6 +40,7 @@ The script installs and enables `greetd` with `tuigreet`, so the machine should 
 - login is handled by `greetd` + `tuigreet`
 - locking uses `swaylock-effects` with a blurred version of the wallpaper
 - there is no idle autolock; locking is manual or triggered by closing the laptop lid
+- three-finger horizontal swipes move across numbered workspaces and clamp to one past the highest occupied workspace
 - portals use `xdg-desktop-portal-gtk` by default and `xdg-desktop-portal-wlr` for screenshots and screencasts
 - for high-DPI displays, edit `~/.config/sway/config` and adjust `output * scale`
 

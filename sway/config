@@ -97,8 +97,8 @@ bindsym $mod+Shift+0 move container to workspace number 10
 bindsym $mod+s scratchpad show
 bindsym $mod+Shift+s move scratchpad
 
-bindgesture swipe:3:left workspace next
-bindgesture swipe:3:right workspace prev
+bindgesture swipe:3:left exec ~/.config/sway/cycle-workspace.sh next
+bindgesture swipe:3:right exec ~/.config/sway/cycle-workspace.sh prev
 
 bindsym XF86AudioRaiseVolume exec wpctl set-volume -l 1 @DEFAULT_AUDIO_SINK@ 5%+
 bindsym XF86AudioLowerVolume exec wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-

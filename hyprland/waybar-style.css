@@ -78,6 +78,13 @@ window#waybar {
     background-color: #d08770;
 }
 
+#custom-notification.dnd-none,
+#custom-notification.dnd-notification,
+#custom-notification.dnd-inhibited-none,
+#custom-notification.dnd-inhibited-notification {
+    color: #bf616a;
+}
+
 #battery.warning {
     background-color: #ebcb8b; /* Yellow */
     color: #2e3440;
