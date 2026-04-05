@@ -8,7 +8,7 @@ git submodule update --init --remote --recursive
 
 echo "Installing core programs..."
 paru -S --needed --noconfirm waybar sway gamescope ghostty thunar \
-    greetd greetd-regreet cage \
+    greetd greetd-tuigreet \
     swaync polkit-gnome swaylock-effects swayidle swaybg \
     xarchiver bluetuith-bin gazelle-tui grim slurp \
     dconf xdg-desktop-portal xdg-desktop-portal-gtk xdg-desktop-portal-wlr \
@@ -71,17 +71,13 @@ cp hyprland/.desktop ~/.local/share/applications/
 
 echo "Configuring greetd..."
 sudo install -d -m 755 /etc/greetd
-sudo install -d -o greeter -g greeter -m 755 /var/lib/regreet
-sudo install -d -o greeter -g greeter -m 755 /var/log/regreet
-sudo install -m 644 sway/regreet.toml /etc/greetd/regreet.toml
-sudo install -m 644 sway/regreet.css /etc/greetd/regreet.css
-sudo install -m 644 hyprland/wallpaper.png /etc/greetd/wallpaper.png
+sudo install -d -o greeter -g greeter -m 755 /var/cache/tuigreet
 printf '%s\n' \
     '[terminal]' \
     'vt = 1' \
     '' \
     '[default_session]' \
-    'command = "env GTK_USE_PORTAL=0 GDK_DEBUG=no-portals cage -s -- regreet"' \
+    'command = "tuigreet --time --user-menu --remember --remember-user-session --asterisks --cmd sway"' \
     'user = "greeter"' | sudo tee /etc/greetd/config.toml >/dev/null
 sudo systemctl enable greetd.service
 sudo systemctl set-default graphical.target
