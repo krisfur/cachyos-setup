@@ -10,6 +10,8 @@ From the repo root:
 ./setup-sway.sh
 ```
 
+The script installs and enables `greetd` with `tuigreet`, so the machine should boot to a login prompt and start `sway` after you log in.
+
 ## Files here
 
 - `config`: main Sway config
@@ -25,10 +27,10 @@ From the repo root:
 - Waybar CSS
 - swaync CSS
 - gazelle config
-- SDDM theme
 
 ## Notes
 
 - screenshots use `grim` + `slurp`
 - the polkit agent is `polkit-gnome`
+- login is handled by `greetd` + `tuigreet`
 - for high-DPI displays, edit `~/.config/sway/config` and adjust `output * scale`

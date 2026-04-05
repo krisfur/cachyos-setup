@@ -8,6 +8,7 @@ git submodule update --init --remote --recursive
 
 echo "Installing core programs..."
 paru -S --needed --noconfirm waybar sway ghostty thunar \
+    greetd greetd-tuigreet \
     swaync polkit-gnome swaylock swayidle swaybg \
     xarchiver bluetuith-bin gazelle-tui grim slurp \
     ninja fuzzel nwg-look qt6-wayland helium-browser-bin \
@@ -48,10 +49,6 @@ fastfetch --gen-config
 cp fastfetch/* ~/.config/fastfetch/
 fastfetch --logo-recache
 
-echo "Setting up SDDM theme..."
-sudo cp -r hyprland/sddm/ /usr/share/sddm/themes/nordic-mountains/
-echo -e "[Theme]\nCurrent=nordic-mountains" | sudo tee /etc/sddm.conf
-
 echo "Copying configs..."
 cp hyprland/wallpaper.png ~/.config/sway/
 cp sway/config ~/.config/sway/config
@@ -63,6 +60,18 @@ cp sway/swaylock.conf ~/.config/swaylock/config
 cp hyprland/swaync-style.css ~/.config/swaync/style.css
 cp hyprland/gazelle-config.json ~/.config/gazelle/config.json
 cp hyprland/.desktop ~/.local/share/applications/
+
+echo "Configuring greetd..."
+sudo install -d -m 755 /etc/greetd
+printf '%s\n' \
+    '[terminal]' \
+    'vt = 1' \
+    '' \
+    '[default_session]' \
+    'command = "tuigreet --cmd sway"' \
+    'user = "greeter"' | sudo tee /etc/greetd/config.toml >/dev/null
+sudo systemctl enable greetd.service
+sudo systemctl set-default graphical.target
 
 echo "Adding ufw rules for localsend..."
 sudo ufw allow 53317/tcp
@@ -82,6 +91,7 @@ sudo usermod -aG docker "$USER"
 
 echo "Setup complete! Log out and back in for all changes to take effect."
 echo ""
+echo "A greetd login prompt will start on boot and launch Sway after login."
 echo "NOTE: For high-DPI displays (3K+, 4K+), edit ~/.config/sway/config"
 echo "and adjust the output scale factor (e.g., 1.5 or 2.0). See the commented"
 echo "example near the top of the config."
