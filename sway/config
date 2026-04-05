@@ -16,9 +16,9 @@ set $lockcmd swaylock -f -i ~/.config/sway/wallpaper.png --config ~/.config/sway
 font pango:JetBrainsMono Nerd Font 10
 floating_modifier $mod normal
 
-exec gsettings set org.gnome.desktop.interface color-scheme "prefer-dark"
-exec gsettings set org.gnome.desktop.interface GTK-theme "Nordic"
-exec gsettings set org.gnome.desktop.interface icon-theme "papirus-dark"
+exec_always gsettings set org.gnome.desktop.interface color-scheme "prefer-dark"
+exec_always gsettings set org.gnome.desktop.interface gtk-theme "Nordic"
+exec_always gsettings set org.gnome.desktop.interface icon-theme "Papirus-Dark"
 exec waybar
 exec swaync
 exec /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1

@@ -11,6 +11,7 @@ paru -S --needed --noconfirm waybar sway ghostty thunar \
     greetd greetd-tuigreet \
     swaync polkit-gnome swaylock swayidle swaybg \
     xarchiver bluetuith-bin gazelle-tui grim slurp \
+    dconf xdg-desktop-portal xdg-desktop-portal-gtk xdg-desktop-portal-wlr \
     ninja fuzzel nwg-look qt6-wayland helium-browser-bin \
     neovim github-cli nordic-theme papirus-icon-theme \
     nodejs npm tree-sitter-cli cmake go zig uv typst \
@@ -36,6 +37,9 @@ echo "Creating config directories..."
 mkdir -p \
     "$HOME/.config/sway" \
     "$HOME/.config/swaylock" \
+    "$HOME/.config/gtk-3.0" \
+    "$HOME/.config/gtk-4.0" \
+    "$HOME/.config/xdg-desktop-portal" \
     "$HOME/.config/fuzzel" \
     "$HOME/.config/waybar" \
     "$HOME/.config/nvim" \
@@ -55,6 +59,9 @@ cp sway/config ~/.config/sway/config
 cp hyprland/fuzzel.ini ~/.config/fuzzel/
 cp hyprland/waybar-style.css ~/.config/waybar/style.css
 cp sway/waybar-config ~/.config/waybar/config
+cp sway/gtk-3.0-settings.ini ~/.config/gtk-3.0/settings.ini
+cp sway/gtk-4.0-settings.ini ~/.config/gtk-4.0/settings.ini
+cp sway/sway-portals.conf ~/.config/xdg-desktop-portal/sway-portals.conf
 cp neovim/init.lua ~/.config/nvim/
 cp sway/swaylock.conf ~/.config/swaylock/config
 cp hyprland/swaync-style.css ~/.config/swaync/style.css
@@ -68,7 +75,7 @@ printf '%s\n' \
     'vt = 1' \
     '' \
     '[default_session]' \
-    'command = "tuigreet --cmd sway"' \
+    'command = "tuigreet --remember --cmd sway"' \
     'user = "greeter"' | sudo tee /etc/greetd/config.toml >/dev/null
 sudo systemctl enable greetd.service
 sudo systemctl set-default graphical.target
