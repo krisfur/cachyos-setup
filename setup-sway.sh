@@ -90,7 +90,7 @@ git config --global user.name "Krzysztof Furman"
 git config --global init.defaultBranch main
 
 echo "Removing bloat..."
-paru -R --noconfirm alacritty firefox dolphin kitty meld 2>/dev/null || true
+paru -R --noconfirm alacritty firefox alacritty foot meld 2>/dev/null || true
 
 echo "Creating docker group..."
 sudo systemctl enable --now docker
