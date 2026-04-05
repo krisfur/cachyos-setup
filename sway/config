@@ -71,7 +71,7 @@ bindsym $mod+Mod1+Up resize shrink height 30 px
 
 bindsym Print exec bash -lc 'mkdir -p "$HOME/Pictures/Screenshots" && grim -g "$(slurp)" "$HOME/Pictures/Screenshots/$(date +%Y-%m-%d_%H-%M-%S).png"'
 bindsym $mod+Shift+Print exec bash -lc 'mkdir -p "$HOME/Pictures/Screenshots" && output=$(slurp -o -f "%o") && [ -n "$output" ] && grim -o "$output" "$HOME/Pictures/Screenshots/$(date +%Y-%m-%d_%H-%M-%S).png"'
-bindsym $mod+Print exec bash -lc 'mkdir -p "$HOME/Pictures/Screenshots" && region=$(swaymsg -t get_tree | jq -j '\''.. | select(.type?) | select(.focused).rect | "\(.x),\(.y) \(.width)x\(.height)"'\'') && [ -n "$region" ] && grim -g "$region" "$HOME/Pictures/Screenshots/$(date +%Y-%m-%d_%H-%M-%S).png"'
+bindsym $mod+Print exec bash -lc 'mkdir -p "$HOME/Pictures/Screenshots" && id=$(swaymsg -t get_tree | jq -r '\''first(.. | objects | select((.type? == "con" or .type? == "floating_con") and .focused and (.foreign_toplevel_identifier? != null)) | .foreign_toplevel_identifier) // empty'\'') && [ -n "$id" ] && grim -T "$id" "$HOME/Pictures/Screenshots/$(date +%Y-%m-%d_%H-%M-%S).png"'
 
 bindsym $mod+1 workspace number 1
 bindsym $mod+2 workspace number 2
