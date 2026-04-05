@@ -57,6 +57,7 @@ echo "Copying configs..."
 cp hyprland/wallpaper.png ~/.config/sway/
 cp sway/config ~/.config/sway/config
 install -m 755 sway/cycle-workspace.sh ~/.config/sway/cycle-workspace.sh
+install -m 755 sway/screenshot-window.sh ~/.config/sway/screenshot-window.sh
 cp hyprland/fuzzel.ini ~/.config/fuzzel/
 cp hyprland/waybar-style.css ~/.config/waybar/style.css
 cp sway/waybar-config ~/.config/waybar/config

@@ -22,6 +22,7 @@ The script installs and enables `greetd` with `tuigreet`, so the machine should 
 - `gtk-4.0-settings.ini`: GTK 4 theme settings
 - `sway-portals.conf`: portal backend selection for Sway
 - `cycle-workspace.sh`: clamped workspace cycling helper for gestures
+- `screenshot-window.sh`: focused-window screenshot helper
 
 ## Shared assets
 
