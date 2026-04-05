@@ -46,6 +46,7 @@ client.urgent #bf616a #bf616a #eceff4 #bf616a #bf616a
 bindsym $mod+Return exec $terminal
 bindsym $mod+w kill
 bindsym $mod+m exit
+bindsym $mod+Shift+c reload
 bindsym $mod+e exec $fileManager
 bindsym $mod+t floating toggle
 bindsym $mod+space exec $menu
