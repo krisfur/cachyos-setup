@@ -1,0 +1,114 @@
+# Output configuration
+output * scale 1
+
+# For high-DPI displays (e.g., 3K), uncomment and adjust:
+# output * scale 1.5
+
+set $mod Mod4
+set $terminal ghostty
+set $fileManager thunar
+set $menu fuzzel
+set $browser helium-browser
+set $lockcmd swaylock -f -i ~/.config/sway/wallpaper.png --config ~/.config/swaylock/config
+
+font pango:JetBrainsMono Nerd Font 10
+floating_modifier $mod normal
+
+exec gsettings set org.gnome.desktop.interface color-scheme "prefer-dark"
+exec gsettings set org.gnome.desktop.interface GTK-theme "Nordic"
+exec gsettings set org.gnome.desktop.interface icon-theme "papirus-dark"
+exec waybar
+exec swaync
+exec /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
+exec swaybg -i ~/.config/sway/wallpaper.png -m fill
+exec swayidle -w timeout 300 'swaylock -f -i ~/.config/sway/wallpaper.png --config ~/.config/swaylock/config' timeout 600 'swaymsg "output * dpms off"' resume 'swaymsg "output * dpms on"' before-sleep 'swaylock -f -i ~/.config/sway/wallpaper.png --config ~/.config/swaylock/config'
+
+input type:keyboard {
+    xkb_layout gb
+    xkb_numlock enabled
+}
+
+input type:touchpad {
+    natural_scroll disabled
+}
+
+gaps inner 4
+gaps outer 4
+default_border pixel 1
+default_floating_border pixel 1
+
+client.focused #88c0d0 #88c0d0 #2e3440 #88c0d0 #88c0d0
+client.focused_inactive #5e81ac #5e81ac #eceff4 #5e81ac #5e81ac
+client.unfocused #4c566a #4c566a #d8dee9 #4c566a #4c566a
+client.urgent #bf616a #bf616a #eceff4 #bf616a #bf616a
+
+bindsym $mod+Return exec $terminal
+bindsym $mod+w kill
+bindsym $mod+m exit
+bindsym $mod+e exec $fileManager
+bindsym $mod+Shift+space floating toggle
+bindsym $mod+space exec $menu
+bindsym $mod+f fullscreen toggle
+bindsym $mod+b exec $browser
+bindsym $mod+l exec $lockcmd
+
+bindsym $mod+Left focus left
+bindsym $mod+Right focus right
+bindsym $mod+Up focus up
+bindsym $mod+Down focus down
+
+bindsym $mod+Shift+Left move left
+bindsym $mod+Shift+Right move right
+bindsym $mod+Shift+Up move up
+bindsym $mod+Shift+Down move down
+
+bindsym $mod+Mod1+Right resize grow width 30 px
+bindsym $mod+Mod1+Left resize shrink width 30 px
+bindsym $mod+Mod1+Down resize grow height 30 px
+bindsym $mod+Mod1+Up resize shrink height 30 px
+
+bindsym Print exec bash -lc 'mkdir -p "$HOME/Pictures/Screenshots" && grim -g "$(slurp)" "$HOME/Pictures/Screenshots/$(date +%Y-%m-%d_%H-%M-%S).png"'
+bindsym $mod+Shift+Print exec bash -lc 'mkdir -p "$HOME/Pictures/Screenshots" && output=$(slurp -o -f "%o") && [ -n "$output" ] && grim -o "$output" "$HOME/Pictures/Screenshots/$(date +%Y-%m-%d_%H-%M-%S).png"'
+
+bindsym $mod+1 workspace number 1
+bindsym $mod+2 workspace number 2
+bindsym $mod+3 workspace number 3
+bindsym $mod+4 workspace number 4
+bindsym $mod+5 workspace number 5
+bindsym $mod+6 workspace number 6
+bindsym $mod+7 workspace number 7
+bindsym $mod+8 workspace number 8
+bindsym $mod+9 workspace number 9
+bindsym $mod+0 workspace number 10
+
+bindsym $mod+Shift+1 move container to workspace number 1
+bindsym $mod+Shift+2 move container to workspace number 2
+bindsym $mod+Shift+3 move container to workspace number 3
+bindsym $mod+Shift+4 move container to workspace number 4
+bindsym $mod+Shift+5 move container to workspace number 5
+bindsym $mod+Shift+6 move container to workspace number 6
+bindsym $mod+Shift+7 move container to workspace number 7
+bindsym $mod+Shift+8 move container to workspace number 8
+bindsym $mod+Shift+9 move container to workspace number 9
+bindsym $mod+Shift+0 move container to workspace number 10
+
+bindsym $mod+s scratchpad show
+bindsym $mod+Shift+s move scratchpad
+
+bindsym XF86AudioRaiseVolume exec wpctl set-volume -l 1 @DEFAULT_AUDIO_SINK@ 5%+
+bindsym XF86AudioLowerVolume exec wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-
+bindsym XF86AudioMute exec wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle
+bindsym XF86AudioMicMute exec wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle
+bindsym XF86MonBrightnessUp exec brightnessctl -e4 -n2 set 5%+
+bindsym XF86MonBrightnessDown exec brightnessctl -e4 -n2 set 5%-
+bindsym XF86AudioNext exec playerctl next
+bindsym XF86AudioPause exec playerctl play-pause
+bindsym XF86AudioPlay exec playerctl play-pause
+bindsym XF86AudioPrev exec playerctl previous
+
+bindswitch --locked lid:on exec swaylock -f -i ~/.config/sway/wallpaper.png --config ~/.config/swaylock/config
+
+for_window [app_id="^(imv|mpv|org\.pulseaudio\.pavucontrol)$"] floating enable, resize set width 70 ppt height 70 ppt, move position center
+for_window [class="^(imv|mpv|org\.pulseaudio\.pavucontrol)$"] floating enable, resize set width 70 ppt height 70 ppt, move position center
+for_window [app_id="^com\.app\.(btop|gazelle|bluetuith)$"] floating enable, resize set width 50 ppt height 75 ppt, move position center
+for_window [class="^com\.app\.(btop|gazelle|bluetuith)$"] floating enable, resize set width 50 ppt height 75 ppt, move position center
