@@ -7,7 +7,7 @@ echo "Fetching latest submodules..."
 git submodule update --init --remote --recursive
 
 echo "Installing core programs..."
-paru -S --needed --noconfirm waybar sway ghostty thunar \
+paru -S --needed --noconfirm waybar sway gamescope ghostty thunar \
     greetd greetd-tuigreet \
     swaync polkit-gnome swaylock-effects swayidle swaybg \
     xarchiver bluetuith-bin gazelle-tui grim slurp \

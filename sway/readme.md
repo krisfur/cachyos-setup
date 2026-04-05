@@ -40,3 +40,20 @@ The script installs and enables `greetd` with `tuigreet`, so the machine should 
 - locking uses `swaylock-effects` with a blurred version of the wallpaper
 - portals use `xdg-desktop-portal-gtk` by default and `xdg-desktop-portal-wlr` for screenshots and screencasts
 - for high-DPI displays, edit `~/.config/sway/config` and adjust `output * scale`
+
+## Steam
+
+If you use output scaling above `1`, XWayland games can end up blurry or lose native resolutions under stock Sway.
+`gamescope` is installed as the minimal workaround for Steam games.
+
+In a game's Steam launch options, start with:
+
+```bash
+gamescope -f -- %command%
+```
+
+For a 4K display where you want the game rendered at 1080p and presented fullscreen at 4K:
+
+```bash
+gamescope -f -w 1920 -h 1080 -W 3840 -H 2160 -- %command%
+```
