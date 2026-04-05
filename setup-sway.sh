@@ -77,7 +77,7 @@ printf '%s\n' \
     'vt = 1' \
     '' \
     '[default_session]' \
-    'command = "tuigreet --time --user-menu --remember --remember-session --remember-user-session --asterisks --cmd sway"' \
+    'command = "tuigreet --time --user-menu --remember --remember-user-session --asterisks --cmd sway"' \
     'user = "greeter"' | sudo tee /etc/greetd/config.toml >/dev/null
 sudo systemctl enable greetd.service
 sudo systemctl set-default graphical.target

@@ -38,7 +38,7 @@ The script installs and enables `greetd` with `tuigreet`, so the machine should 
 - screenshots use `grim` + `slurp`, with `jq` for focused-window capture
 - the polkit agent is `polkit-gnome`
 - login is handled by `greetd` + `tuigreet`
-- `tuigreet` uses `--user-menu --remember --remember-session --remember-user-session --asterisks --time`
+- `tuigreet` uses `--user-menu --remember --remember-user-session --asterisks --time`
 - locking uses `swaylock-effects` with a blurred version of the wallpaper
 - there is no idle autolock; locking is manual or triggered by closing the laptop lid
 - three-finger horizontal swipes move across numbered workspaces and clamp to one past the highest occupied workspace
