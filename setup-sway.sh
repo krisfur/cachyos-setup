@@ -12,7 +12,7 @@ paru -S --needed --noconfirm waybar sway gamescope ghostty thunar \
     swaync polkit-gnome swaylock-effects swayidle swaybg \
     xarchiver bluetuith-bin gazelle-tui grim slurp \
     dconf xdg-desktop-portal xdg-desktop-portal-gtk xdg-desktop-portal-wlr \
-    ninja fuzzel nwg-look qt6-wayland helium-browser-bin \
+    ninja fuzzel nwg-look qt6-wayland helium-browser-bin jq \
     neovim github-cli nordic-theme papirus-icon-theme \
     nodejs npm tree-sitter-cli cmake go zig uv typst \
     brightnessctl ttf-jetbrains-mono-nerd imv mpv \
