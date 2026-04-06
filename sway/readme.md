@@ -77,3 +77,23 @@ For the ASUS-specific keyboard lighting and WirePlumber audio fix, run the share
 
 - Set `output * scale 1.5` in `~/.config/sway/config`. (1.6 breaks `imv` as buffer is not divisible by 2)
 - Remap the G14 M4 macro button for screenshots by replacing `Print` with `XF86Launch1` in `sway/config`.
+
+If need be for external monitors find the avaialble refresh rates:
+
+```bash
+swaymsg -t get_outputs
+```
+
+and set the desired one like this for thunderbolt:
+
+```bash
+swaymsg output DP-3 mode 2560x1440@144Hz
+```
+
+or like this for HDMI port:
+
+```bash
+swaymsg output HDMI-A-1 mode 2560x1440@144Hz
+```
+
+This should persist for the same monitor on reconnecting.
