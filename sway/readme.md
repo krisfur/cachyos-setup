@@ -71,5 +71,5 @@ For the ASUS-specific keyboard lighting and WirePlumber audio fix, run the share
 ./setup-g14.sh
 ```
 
-- Set `output * scale 1.6` in `~/.config/sway/config`.
+- Set `output * scale 1.5` in `~/.config/sway/config`. (1.6 breaks `imv` as buffer is not divisible by 2)
 - Remap the G14 M4 macro button for screenshots by replacing `Print` with `XF86Launch1` in `sway/config`.
