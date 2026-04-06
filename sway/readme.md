@@ -57,11 +57,15 @@ In a game's Steam launch options, start with:
 gamescope -f -- %command%
 ```
 
-For a 4K display where you want the game rendered at 1080p and presented fullscreen at 4K:
+but that defaults to 720p.
+
+For a 1440p display:  
 
 ```bash
-gamescope -f -w 1920 -h 1080 -W 3840 -H 2160 -- %command%
+gamescope -f -W 2560 -H 1440 -w 2560 -h 1440 -- %command%
 ```
+
+(anaolgously for other displays like the Zephyrus G14's 2880x1800 etc.)
 
 ## Zephyrus G14
 
