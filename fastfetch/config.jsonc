@@ -103,21 +103,8 @@
       "format": "{#title}┌── {#keys} Desktop {#title}──────────────┐"
     },
     {
-      "type": "de",
-      "key": "│ "
-    },
-    {
       "type": "wm",
-      "key": "│ ├─ "
-    },
-    {
-      "type": "wmtheme",
-      "key": "│ ├─ "
-    },
-    {
-      "type": "theme",
-      "key": "│ └─ ",
-      "format": "{1}"
+      "key": "│ "
     },
     {
       "type": "custom",
