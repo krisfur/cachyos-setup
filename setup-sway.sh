@@ -34,6 +34,7 @@ curl -fsSL https://bun.sh/install | bash
 
 echo "Creating config directories..."
 mkdir -p \
+    "$HOME/.config/fish/conf.d" \
     "$HOME/.config/sway" \
     "$HOME/.config/swaylock" \
     "$HOME/.config/gtk-3.0" \
@@ -53,6 +54,7 @@ cp fastfetch/* ~/.config/fastfetch/
 fastfetch --logo-recache
 
 echo "Copying configs..."
+install -m 644 sway/cachyos-sway-autostart.fish ~/.config/fish/conf.d/cachyos-sway-autostart.fish
 cp hyprland/wallpaper.png ~/.config/sway/
 cp sway/config ~/.config/sway/config
 install -m 755 sway/cycle-workspace.sh ~/.config/sway/cycle-workspace.sh
@@ -74,16 +76,7 @@ sudo install -d -m 755 /etc/systemd/system/getty@tty1.service.d
 printf '%s\n' \
     '[Service]' \
     'ExecStart=' \
-    "ExecStart=-/sbin/agetty --autologin $USER --noclear %I \$TERM" | sudo tee /etc/systemd/system/getty@tty1.service.d/override.conf >/dev/null
-sudo install -d -m 755 /etc/profile.d
-printf '%s\n' \
-    '#!/bin/sh' \
-    '' \
-    "if [ \"\$(id -un)\" = \"$USER\" ] && [ -z \"\${DISPLAY-}\" ] && [ -z \"\${WAYLAND_DISPLAY-}\" ] && [ \"\${XDG_VTNR-}\" = 1 ]; then" \
-    '    sway --unsupported-gpu' \
-    'fi' | sudo tee /etc/profile.d/cachyos-sway-autostart.sh >/dev/null
-sudo chmod 755 /etc/profile.d/cachyos-sway-autostart.sh
-sudo systemctl disable --now greetd.service 2>/dev/null || true
+    "ExecStart=-/usr/bin/agetty --noreset --noclear --autologin $USER - \$TERM" | sudo tee /etc/systemd/system/getty@tty1.service.d/override.conf >/dev/null
 sudo systemctl daemon-reload
 sudo systemctl enable getty@tty1.service
 sudo systemctl set-default multi-user.target
@@ -104,9 +97,9 @@ echo "Creating docker group..."
 sudo systemctl enable --now docker
 sudo usermod -aG docker "$USER"
 
-echo "Setup complete! Log out and back in for all changes to take effect."
+echo "Setup complete! Reboot for tty1 autologin and Sway startup to take effect."
 echo ""
-echo "tty1 will autologin as $USER and start Sway with --unsupported-gpu on boot."
+echo "tty1 will autologin as $USER and Fish will start Sway with --unsupported-gpu on boot."
 echo "NOTE: For high-DPI displays (3K+, 4K+), edit ~/.config/sway/config"
 echo "and adjust the output scale factor (e.g., 1.5 or 2.0). See the commented"
 echo "example near the top of the config."

@@ -10,7 +10,7 @@ From the repo root:
 ./setup-sway.sh
 ```
 
-The script configures `tty1` to autologin as the user running `./setup-sway.sh` and starts `sway --unsupported-gpu` from a login shell.
+The script configures `tty1` to autologin as the user running `./setup-sway.sh` on the next boot and installs a Fish autostart hook for `sway --unsupported-gpu`.
 This avoids a display manager entirely, which is often simpler on hybrid-GPU laptops.
 
 ## Files here
@@ -39,7 +39,7 @@ This avoids a display manager entirely, which is often simpler on hybrid-GPU lap
 - screenshots use `grim` + `slurp`, with `jq` for focused-window capture
 - the polkit agent is `polkit-gnome`
 - login is handled by `agetty` autologin on `tty1`
-- Sway starts from `/etc/profile.d/cachyos-sway-autostart.sh` with `--unsupported-gpu`
+- Sway starts from `~/.config/fish/conf.d/cachyos-sway-autostart.fish` with `--unsupported-gpu`
 - locking uses `swaylock-effects` with a blurred version of the wallpaper
 - there is no idle autolock; locking is manual or triggered by closing the laptop lid
 - three-finger horizontal swipes move across numbered workspaces and clamp to one past the highest occupied workspace
