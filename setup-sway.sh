@@ -8,7 +8,6 @@ git submodule update --init --remote --recursive
 
 echo "Installing core programs..."
 paru -S --needed --noconfirm waybar sway gamescope ghostty thunar \
-    greetd greetd-tuigreet \
     swaync polkit-gnome swaylock-effects swayidle swaybg \
     xarchiver bluetuith-bin gazelle-tui grim slurp \
     dconf xdg-desktop-portal xdg-desktop-portal-gtk xdg-desktop-portal-wlr \
@@ -70,18 +69,24 @@ cp hyprland/swaync-style.css ~/.config/swaync/style.css
 cp hyprland/gazelle-config.json ~/.config/gazelle/config.json
 cp hyprland/.desktop ~/.local/share/applications/
 
-echo "Configuring greetd..."
-sudo install -d -m 755 /etc/greetd
-sudo install -d -o greeter -g greeter -m 755 /var/cache/tuigreet
+echo "Configuring tty1 autologin for Sway..."
+sudo install -d -m 755 /etc/systemd/system/getty@tty1.service.d
 printf '%s\n' \
-    '[terminal]' \
-    'vt = 1' \
+    '[Service]' \
+    'ExecStart=' \
+    "ExecStart=-/sbin/agetty --autologin $USER --noclear %I \$TERM" | sudo tee /etc/systemd/system/getty@tty1.service.d/override.conf >/dev/null
+sudo install -d -m 755 /etc/profile.d
+printf '%s\n' \
+    '#!/bin/sh' \
     '' \
-    '[default_session]' \
-    'command = "tuigreet --time --user-menu --remember --remember-user-session --asterisks --cmd \"sway --unsupported-gpu\""' \
-    'user = "greeter"' | sudo tee /etc/greetd/config.toml >/dev/null
-sudo systemctl enable greetd.service
-sudo systemctl set-default graphical.target
+    "if [ \"\$(id -un)\" = \"$USER\" ] && [ -z \"\${DISPLAY-}\" ] && [ -z \"\${WAYLAND_DISPLAY-}\" ] && [ \"\${XDG_VTNR-}\" = 1 ]; then" \
+    '    sway --unsupported-gpu' \
+    'fi' | sudo tee /etc/profile.d/cachyos-sway-autostart.sh >/dev/null
+sudo chmod 755 /etc/profile.d/cachyos-sway-autostart.sh
+sudo systemctl disable --now greetd.service 2>/dev/null || true
+sudo systemctl daemon-reload
+sudo systemctl enable getty@tty1.service
+sudo systemctl set-default multi-user.target
 
 echo "Adding ufw rules for localsend..."
 sudo ufw allow 53317/tcp
@@ -101,7 +106,7 @@ sudo usermod -aG docker "$USER"
 
 echo "Setup complete! Log out and back in for all changes to take effect."
 echo ""
-echo "A greetd login prompt will start on boot and launch Sway after login."
+echo "tty1 will autologin as $USER and start Sway with --unsupported-gpu on boot."
 echo "NOTE: For high-DPI displays (3K+, 4K+), edit ~/.config/sway/config"
 echo "and adjust the output scale factor (e.g., 1.5 or 2.0). See the commented"
 echo "example near the top of the config."

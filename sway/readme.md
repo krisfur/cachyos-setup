@@ -10,8 +10,8 @@ From the repo root:
 ./setup-sway.sh
 ```
 
-The script installs and enables `greetd` with `tuigreet`, so the machine should boot to a login prompt and start `sway` after you log in.
-`tuigreet` is configured with a user menu, remembered user/session, masked password feedback, and a clock.
+The script configures `tty1` to autologin as the user running `./setup-sway.sh` and starts `sway --unsupported-gpu` from a login shell.
+This avoids a display manager entirely, which is often simpler on hybrid-GPU laptops.
 
 ## Files here
 
@@ -38,8 +38,8 @@ The script installs and enables `greetd` with `tuigreet`, so the machine should 
 
 - screenshots use `grim` + `slurp`, with `jq` for focused-window capture
 - the polkit agent is `polkit-gnome`
-- login is handled by `greetd` + `tuigreet`
-- `tuigreet` uses `--user-menu --remember --remember-user-session --asterisks --time`
+- login is handled by `agetty` autologin on `tty1`
+- Sway starts from `/etc/profile.d/cachyos-sway-autostart.sh` with `--unsupported-gpu`
 - locking uses `swaylock-effects` with a blurred version of the wallpaper
 - there is no idle autolock; locking is manual or triggered by closing the laptop lid
 - three-finger horizontal swipes move across numbered workspaces and clamp to one past the highest occupied workspace
