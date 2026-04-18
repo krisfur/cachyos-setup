@@ -34,7 +34,7 @@ Neovim config is copied from `../mise-setup/nvim/init.lua`, so the nested `mise-
 - `gtk-4.0-settings.ini`: GTK 4 theme settings
 - `sway-portals.conf`: portal backend selection for Sway
 - `cycle-workspace.sh`: clamped workspace cycling helper for gestures
-- `screenshot-window.sh`: focused-window screenshot helper
+- `sway-screenshot.sh`: shared screenshot helper for region, output, and focused window capture
 
 ## Shared assets
 
@@ -49,7 +49,7 @@ Neovim config is copied from `../mise-setup/nvim/init.lua`, so the nested `mise-
 
 ## Notes
 
-- screenshots use `grim` + `slurp`, with `jq` for focused-window capture
+- screenshots use `grim` + `slurp`, with `jq` for focused-window capture, save to disk, copy PNG data to the clipboard with `wl-copy`, and show a notification preview with the saved path
 - the polkit agent is `polkit-gnome`
 - locking uses `swaylock-effects` with a blurred version of the wallpaper
 - there is no idle autolock; locking is manual or triggered by closing the laptop lid
@@ -87,8 +87,8 @@ For the ASUS-specific keyboard lighting and WirePlumber audio fix, run the share
 ./setup-g14.sh
 ```
 
-- Set `output * scale 1.5` in `~/.config/sway/config`. (1.6 breaks `imv` as buffer is not divisible by 2)
-- Remap the G14 M4 macro button for screenshots by replacing `Print` with `XF86Launch1` in `sway/config`.
+- `./setup-g14.sh` patches `~/.config/sway/config` to `output * scale 1.5`. (`1.6` breaks `imv` as the buffer is not divisible by `2`.)
+- `./setup-g14.sh` remaps the screenshot bindings in `~/.config/sway/config` from `Print` to `XF86Launch1` for the G14 M4 macro button.
 
 If need be for external monitors find the avaialble refresh rates:
 

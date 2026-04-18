@@ -69,9 +69,9 @@ bindsym $mod+Mod1+Left resize shrink width 30 px
 bindsym $mod+Mod1+Down resize grow height 30 px
 bindsym $mod+Mod1+Up resize shrink height 30 px
 
-bindsym Print exec bash -lc 'mkdir -p "$HOME/Pictures/Screenshots" && grim -g "$(slurp)" "$HOME/Pictures/Screenshots/$(date +%Y-%m-%d_%H-%M-%S).png"'
-bindsym $mod+Shift+Print exec bash -lc 'mkdir -p "$HOME/Pictures/Screenshots" && output=$(slurp -o -f "%o") && [ -n "$output" ] && grim -o "$output" "$HOME/Pictures/Screenshots/$(date +%Y-%m-%d_%H-%M-%S).png"'
-bindsym $mod+Print exec ~/.config/sway/screenshot-window.sh
+bindsym Print exec ~/.config/sway/sway-screenshot.sh region
+bindsym $mod+Shift+Print exec ~/.config/sway/sway-screenshot.sh output
+bindsym $mod+Print exec ~/.config/sway/sway-screenshot.sh window
 
 bindsym $mod+1 workspace number 1
 bindsym $mod+2 workspace number 2
