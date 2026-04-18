@@ -6,11 +6,31 @@ cd "$(dirname "$0")"
 echo "Installing Zephyrus G14 utilities..."
 paru -S --needed --noconfirm asusctl
 
+echo "Preparing ASUS control daemon..."
+sudo install -d -m 755 /etc/asusd
+sudo systemctl reset-failed asusd || true
+sudo systemctl start asusd
+
 echo "Configuring keyboard lighting..."
 asusctl aura effect static --colour 5E81AC
 
 echo "Configuring slash lighting if supported..."
 asusctl slash --mode Static 2>/dev/null || printf 'Skipping slash lighting; not supported on this model.\n'
+
+echo "Ensuring Sway session supports NVIDIA..."
+sway_session=/usr/share/wayland-sessions/sway.desktop
+if [ -f "$sway_session" ]; then
+    if grep -Eq '^Exec=.*--unsupported-gpu([[:space:]]|$)' "$sway_session"; then
+        printf 'Sway session already includes --unsupported-gpu.\n'
+    elif grep -q '^Exec=' "$sway_session"; then
+        sudo sed -i '/^Exec=/ s|$| --unsupported-gpu|' "$sway_session"
+        printf 'Patched Sway session to launch with --unsupported-gpu.\n'
+    else
+        printf 'Skipping Sway session patch; no Exec line found in %s.\n' "$sway_session"
+    fi
+else
+    printf 'Skipping Sway session patch; %s not found.\n' "$sway_session"
+fi
 
 echo "Installing WirePlumber G14 soft-mixer fix..."
 sudo install -d -m 755 /etc/wireplumber/wireplumber.conf.d
