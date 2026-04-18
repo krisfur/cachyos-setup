@@ -6,8 +6,10 @@ cd "$(dirname "$0")"
 echo "Installing Zephyrus G14 utilities..."
 paru -S --needed --noconfirm asusctl
 
-echo "Enabling ASUS control daemon..."
-sudo systemctl enable --now asusd
+echo "Preparing ASUS control daemon..."
+sudo install -d -m 755 /etc/asusd
+sudo systemctl reset-failed asusd || true
+sudo systemctl start asusd
 
 echo "Configuring keyboard lighting..."
 asusctl aura effect static --colour 5E81AC
