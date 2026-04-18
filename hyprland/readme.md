@@ -63,8 +63,6 @@ Run the shared hardware script from the repo root:
 ./setup-g14.sh
 ```
 
-- Set the display scale to `1.6` in `hyprland.conf`.
+- `./setup-g14.sh` patches `~/.config/hypr/hyprland.conf` to use display scale `1.5` when that config exists.
 
-- Remap M4 to PrtSc:
-
-in `hyprland.conf` replace `Print` with `XF86Launch1`.
+- `./setup-g14.sh` also remaps the installed `hyprshot` screenshot bindings from `Print` to `XF86Launch1` for the G14 M4 button when that config exists.
