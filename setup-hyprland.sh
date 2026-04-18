@@ -13,7 +13,7 @@ paru -S --needed --noconfirm waybar awww ghostty thunar \
     fuzzel nwg-look qt6-wayland helium-browser-bin \
     nordic-theme papirus-icon-theme \
     brightnessctl ttf-jetbrains-mono-nerd imv mpv \
-    gimp viu wl-clipboard localsend \
+    gimp viu wl-clipboard localsend t3code-bin \
     docker gvfs gvfs-mtp libmtp android-udev \
     fastfetch
 

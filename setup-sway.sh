@@ -14,7 +14,7 @@ paru -S --needed --noconfirm waybar sway gamescope ghostty thunar \
     fuzzel nwg-look qt6-wayland helium-browser-bin jq \
     nordic-theme papirus-icon-theme \
     brightnessctl ttf-jetbrains-mono-nerd imv mpv \
-    gimp viu wl-clipboard localsend \
+    gimp viu wl-clipboard localsend t3code-bin \
     docker gvfs gvfs-mtp libmtp android-udev \
     fastfetch
 
@@ -46,7 +46,6 @@ cp fastfetch/* ~/.config/fastfetch/
 fastfetch --logo-recache
 
 echo "Copying configs..."
-install -m 644 sway/cachyos-sway-autostart.fish ~/.config/fish/conf.d/cachyos-sway-autostart.fish
 cp hyprland/wallpaper.png ~/.config/sway/
 cp sway/config ~/.config/sway/config
 install -m 755 sway/cycle-workspace.sh ~/.config/sway/cycle-workspace.sh
@@ -62,16 +61,6 @@ cp sway/swaylock.conf ~/.config/swaylock/config
 cp hyprland/swaync-style.css ~/.config/swaync/style.css
 cp hyprland/gazelle-config.json ~/.config/gazelle/config.json
 cp hyprland/.desktop ~/.local/share/applications/
-
-echo "Configuring tty1 autologin for Sway..."
-sudo install -d -m 755 /etc/systemd/system/getty@tty1.service.d
-printf '%s\n' \
-    '[Service]' \
-    'ExecStart=' \
-    "ExecStart=-/usr/bin/agetty --noreset --noclear --autologin $USER - \$TERM" | sudo tee /etc/systemd/system/getty@tty1.service.d/override.conf >/dev/null
-sudo systemctl daemon-reload
-sudo systemctl enable getty@tty1.service
-sudo systemctl set-default multi-user.target
 
 echo "Adding ufw rules for localsend..."
 sudo ufw allow 53317/tcp
@@ -89,9 +78,8 @@ echo "Creating docker group..."
 sudo systemctl enable --now docker
 sudo usermod -aG docker "$USER"
 
-echo "Setup complete! Reboot for tty1 autologin and Sway startup to take effect."
+echo "Setup complete! Log out and back in for all changes to take effect."
 echo ""
-echo "tty1 will autologin as $USER and Fish will start Sway with --unsupported-gpu on boot."
 echo "NOTE: For high-DPI displays (3K+, 4K+), edit ~/.config/sway/config"
 echo "and adjust the output scale factor (e.g., 1.5 or 2.0). See the commented"
 echo "example near the top of the config."

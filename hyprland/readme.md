@@ -43,6 +43,7 @@ Neovim config is copied from `../mise-setup/nvim/init.lua`, so the nested `mise-
 - `fastfetch` config is generated and then overwritten from `../fastfetch/`
 - `docker` is enabled as a system service and the user is added to the `docker` group
 - `localsend` uses TCP and UDP port `53317`
+- `t3code` is installed via the `t3code-bin` AUR package
 - log out and back in after running the script so shell activation and group membership changes apply cleanly
 - for high-DPI displays, edit `~/.config/hypr/hyprland.conf` and adjust the monitor scale factor
 
