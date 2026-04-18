@@ -15,7 +15,7 @@ paru -S --needed --noconfirm waybar awww ghostty thunar \
     brightnessctl ttf-jetbrains-mono-nerd imv mpv \
     gimp viu wl-clipboard localsend t3code-bin \
     docker gvfs gvfs-mtp libmtp android-udev \
-    fastfetch
+    fastfetch power-profiles-daemon
 
 echo "Adding user to input group..."
 sudo usermod -aG input "$USER"
@@ -70,6 +70,9 @@ paru -R --noconfirm alacritty firefox dolphin kitty meld 2>/dev/null || true
 echo "Creating docker group..."
 sudo systemctl enable --now docker
 sudo usermod -aG docker "$USER"
+
+echo "Enabling power profile service..."
+sudo systemctl enable --now power-profiles-daemon
 
 echo "Setup complete! Log out and back in for all changes to take effect."
 echo ""
