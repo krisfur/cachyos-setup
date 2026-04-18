@@ -6,51 +6,47 @@ Setting up a hyprland clean install of CachyOS for actual use.
 
 ![screenshot](./screenshot.png)
 
-## Install core programs
+## Install
 
 ```bash
-paru -S --needed waybar awww ghostty thunar \
-swaync hyprpolkitagent hyprlock xarchiver \
-bluetuith-bin gazelle-tui hyprshot ninja \
-fuzzel nwg-look qt6-wayland helium-browser-bin \
-neovim github-cli nordic-theme papirus-icon-theme \
-nodejs npm tree-sitter-cli cmake go zig uv typst \
-brightnessctl ttf-jetbrains-mono-nerd imv mpv \
-gimp viu wl-clipboard opencode-bin localsend \
-clang docker gvfs gvfs-mtp libmtp android-udev \
-odin fastfetch swift-bin
+./setup-hyprland.sh
 ```
 
-add user to input group for waybar:
+The script installs the Hyprland desktop packages, applies the SDDM theme, bootstraps the shared `mise` toolchain, copies the configs in this directory, enables Docker, and opens the required `ufw` rules for `localsend`.
 
-```bash
-sudo usermod -aG input $USER
-```
+## Shared Dev Tooling
 
-and set up docker:
+`./setup-hyprland.sh` calls `./setup-mise.sh`, which:
 
-```bash
-sudo systemctl enable --now docker
-sudo usermod -aG docker $USER
-newgrp docker
-```
+- installs `mise` via `paru`
+- copies `mise-setup/mise/config.toml` to `~/.config/mise/config.toml`
+- installs the shared toolchain with `mise install`
+- installs a Fish activation snippet in `~/.config/fish/conf.d/`
 
-`Rust`:
-```bash
-curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
-```
+Neovim config is copied from `../mise-setup/nvim/init.lua`, so the nested `mise-setup` submodule is the only Neovim source of truth in this repo.
 
-`Fex`:
-```bash
-cargo install fex
-```
+## Files Here
 
-`Bun`:
-```bash
-curl -fsSL https://bun.sh/install | bash
-```
+- `hyprland.conf`: main Hyprland config
+- `hyprlock.conf`: lock screen config
+- `waybar-config`: Hyprland version of the Waybar config
+- `waybar-style.css`: shared Waybar styling
+- `fuzzel.ini`: launcher config
+- `swaync-style.css`: notification center styling
+- `gazelle-config.json`: `gazelle-tui` config
+- `sddm/`: Nordic Mountains SDDM theme
+- `.desktop`: desktop entry used for `fex`
 
-## Set themes (rest is set in the hyprland.conf on a restart):
+## Notes
+
+- set the GTK theme with `nwg-look`; the expected choice is `nordic`
+- `fastfetch` config is generated and then overwritten from `../fastfetch/`
+- `docker` is enabled as a system service and the user is added to the `docker` group
+- `localsend` uses TCP and UDP port `53317`
+- log out and back in after running the script so shell activation and group membership changes apply cleanly
+- for high-DPI displays, edit `~/.config/hypr/hyprland.conf` and adjust the monitor scale factor
+
+## Theme
 
 ```bash
 nwg-look
@@ -58,72 +54,7 @@ nwg-look
 
 and set to `nordic`.
 
-Fastfetch:
-
-```bash
-fastfetch --gen-config
-cp ../fastfetch/* ~/.config/fastfetch/
-fastfetch --logo-recache
-```
-
-SDDM theme:
-
-```bash
-sudo cp -r sddm/ /usr/share/sddm/themes/nordic-mountains/
-echo -e "[Theme]\nCurrent=nordic-mountains" | sudo tee /etc/sddm.conf
-```
-
-Add `ufw` rules for localsend:
-
-```bash
-sudo ufw allow 53317/tcp
-sudo ufw allow 53317/udp
-```
-
-## Remove bloat:
-
-```bash
-paru -R alacritty firefox dolphin kitty meld
-```
-
-## Configs
-
-```bash
-#wallpaper
-cp ../wallpaper.png ~/.config/hypr/
-#hyprland
-cp hyprland.conf ~/.config/hypr/
-#fuzzel
-mkdir -p ~/.config/fuzzel
-cp fuzzel.ini ~/.config/fuzzel/
-#waybar
-mkdir -p ~/.config/waybar
-cp waybar-style.css ~/.config/waybar/style.css
-cp waybar-config ~/.config/waybar/config
-#neovim
-mkdir -p ~/.config/nvim
-cp ../neovim/init.lua ~/.config/nvim/
-#hyprlock
-cp hyprlock.conf ~/.config/hypr/
-#swaync
-mkdir -p ~/.config/swaync
-cp swaync-style.css ~/.config/swaync/style.css
-#gazelle
-cp gazelle-config.json ~/.config/gazelle/style.css
-#fex
-mkdir -p ~/.local/share/applications
-cp .desktop ~/.local/share/applications/
-```
-
-git config:
-
-```bash
-git config --global user.email "k_furman@outlook.com"
-git config --global user.name "Krzysztof Furman"
-git config --global init.defaultBranch main
-```
-
-# Zephyrus G14 specific
+## Zephyrus G14
 
 Run the shared hardware script from the repo root:
 

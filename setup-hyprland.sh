@@ -9,27 +9,19 @@ git submodule update --init --remote --recursive
 echo "Installing core programs..."
 paru -S --needed --noconfirm waybar awww ghostty thunar \
     swaync hyprpolkitagent hyprlock xarchiver \
-    bluetuith-bin gazelle-tui hyprshot ninja \
+    bluetuith-bin gazelle-tui hyprshot \
     fuzzel nwg-look qt6-wayland helium-browser-bin \
-    neovim github-cli nordic-theme papirus-icon-theme \
-    nodejs npm tree-sitter-cli cmake go zig uv typst \
+    nordic-theme papirus-icon-theme \
     brightnessctl ttf-jetbrains-mono-nerd imv mpv \
-    gimp viu wl-clipboard opencode-bin localsend \
-    clang docker gvfs gvfs-mtp libmtp android-udev \
-    odin fastfetch swift-bin
+    gimp viu wl-clipboard localsend \
+    docker gvfs gvfs-mtp libmtp android-udev \
+    fastfetch
 
 echo "Adding user to input group..."
 sudo usermod -aG input "$USER"
 
-echo "Installing Rust..."
-curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y
-source "$HOME/.cargo/env"
-
-echo "Installing fex..."
-cargo install fex
-
-echo "Installing Bun..."
-curl -fsSL https://bun.sh/install | bash
+echo "Setting up shared development tooling..."
+./setup-mise.sh
 
 echo "Creating config directories..."
 mkdir -p \
@@ -57,7 +49,7 @@ cp hyprland/hyprland.conf ~/.config/hypr/
 cp hyprland/fuzzel.ini ~/.config/fuzzel/
 cp hyprland/waybar-style.css ~/.config/waybar/style.css
 cp hyprland/waybar-config ~/.config/waybar/config
-cp neovim/init.lua ~/.config/nvim/
+cp mise-setup/nvim/init.lua ~/.config/nvim/
 cp hyprland/hyprlock.conf ~/.config/hypr/
 cp hyprland/swaync-style.css ~/.config/swaync/style.css
 cp hyprland/gazelle-config.json ~/.config/gazelle/config.json
@@ -77,7 +69,7 @@ paru -R --noconfirm alacritty firefox dolphin kitty meld 2>/dev/null || true
 
 echo "Creating docker group..."
 sudo systemctl enable --now docker
-sudo usermod -aG docker $USER
+sudo usermod -aG docker "$USER"
 
 echo "Setup complete! Log out and back in for all changes to take effect."
 echo ""

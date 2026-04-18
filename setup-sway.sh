@@ -11,26 +11,18 @@ paru -S --needed --noconfirm waybar sway gamescope ghostty thunar \
     swaync polkit-gnome swaylock-effects swayidle swaybg \
     xarchiver bluetuith-bin gazelle-tui grim slurp \
     dconf xdg-desktop-portal xdg-desktop-portal-gtk xdg-desktop-portal-wlr \
-    ninja fuzzel nwg-look qt6-wayland helium-browser-bin jq \
-    neovim github-cli nordic-theme papirus-icon-theme \
-    nodejs npm tree-sitter-cli cmake go zig uv typst \
+    fuzzel nwg-look qt6-wayland helium-browser-bin jq \
+    nordic-theme papirus-icon-theme \
     brightnessctl ttf-jetbrains-mono-nerd imv mpv \
-    gimp viu wl-clipboard opencode-bin localsend \
-    clang docker gvfs gvfs-mtp libmtp android-udev \
-    odin fastfetch swift-bin
+    gimp viu wl-clipboard localsend \
+    docker gvfs gvfs-mtp libmtp android-udev \
+    fastfetch
 
 echo "Adding user to input group..."
 sudo usermod -aG input "$USER"
 
-echo "Installing Rust..."
-curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y
-source "$HOME/.cargo/env"
-
-echo "Installing fex..."
-cargo install fex
-
-echo "Installing Bun..."
-curl -fsSL https://bun.sh/install | bash
+echo "Setting up shared development tooling..."
+./setup-mise.sh
 
 echo "Creating config directories..."
 mkdir -p \
@@ -65,7 +57,7 @@ cp sway/waybar-config ~/.config/waybar/config
 cp sway/gtk-3.0-settings.ini ~/.config/gtk-3.0/settings.ini
 cp sway/gtk-4.0-settings.ini ~/.config/gtk-4.0/settings.ini
 cp sway/sway-portals.conf ~/.config/xdg-desktop-portal/sway-portals.conf
-cp neovim/init.lua ~/.config/nvim/
+cp mise-setup/nvim/init.lua ~/.config/nvim/
 cp sway/swaylock.conf ~/.config/swaylock/config
 cp hyprland/swaync-style.css ~/.config/swaync/style.css
 cp hyprland/gazelle-config.json ~/.config/gazelle/config.json

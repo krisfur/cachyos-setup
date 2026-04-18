@@ -13,6 +13,17 @@ From the repo root:
 The script configures `tty1` to autologin as the user running `./setup-sway.sh` on the next boot and installs a Fish autostart hook for `sway --unsupported-gpu`.
 This avoids a display manager entirely, which is often simpler on hybrid-GPU laptops.
 
+## Shared Dev Tooling
+
+`./setup-sway.sh` calls `./setup-mise.sh`, which:
+
+- installs `mise` via `paru`
+- copies `mise-setup/mise/config.toml` to `~/.config/mise/config.toml`
+- installs the shared toolchain with `mise install`
+- installs a Fish activation snippet in `~/.config/fish/conf.d/`
+
+Neovim config is copied from `../mise-setup/nvim/init.lua`, so the nested `mise-setup` submodule is the only Neovim source of truth in this repo.
+
 ## Files here
 
 - `config`: main Sway config
@@ -26,13 +37,14 @@ This avoids a display manager entirely, which is often simpler on hybrid-GPU lap
 
 ## Shared assets
 
-`setup-sway.sh` reuses shared files from `../hyprland/` instead of duplicating them here:
+`setup-sway.sh` reuses shared files from `../hyprland/` and `../mise-setup/` instead of duplicating them here:
 
 - wallpaper
 - fuzzel config
 - Waybar CSS
 - swaync CSS
 - gazelle config
+- Neovim config from `../mise-setup/nvim/`
 
 ## Notes
 

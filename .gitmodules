@@ -1,7 +1,3 @@
-[submodule "neovim"]
-	path = neovim
-	url = https://github.com/krisfur/neovim-config.git
-	branch = main
 [submodule "mise-setup"]
 	path = mise-setup
 	url = https://github.com/krisfur/mise-setup.git
