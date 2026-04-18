@@ -35,3 +35,11 @@ case "$mode" in
 esac
 
 wl-copy --type image/png < "$file"
+
+if command -v notify-send >/dev/null 2>&1; then
+    notify-send \
+        -i "$file" \
+        "Screenshot saved" \
+        "Copied to clipboard
+Saved to: $file" || true
+fi

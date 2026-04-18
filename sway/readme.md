@@ -49,7 +49,7 @@ Neovim config is copied from `../mise-setup/nvim/init.lua`, so the nested `mise-
 
 ## Notes
 
-- screenshots use `grim` + `slurp`, with `jq` for focused-window capture, and copy PNG data to the clipboard with `wl-copy`
+- screenshots use `grim` + `slurp`, with `jq` for focused-window capture, save to disk, copy PNG data to the clipboard with `wl-copy`, and show a notification preview with the saved path
 - the polkit agent is `polkit-gnome`
 - locking uses `swaylock-effects` with a blurred version of the wallpaper
 - there is no idle autolock; locking is manual or triggered by closing the laptop lid
